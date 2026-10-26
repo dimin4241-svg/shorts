@@ -17,14 +17,14 @@ Original small Python project that turns **one topic into a vertical 9:16 MP4**:
 
 Use these engines for Russian Shorts:
 
-- **Yandex SpeechKit** (default): choose \`ermil\` (male), \`zahar\` (male), \`jane\` (female), or \`marina\` (female). Setup: add \`YANDEX_API_KEY\` from a Yandex Cloud service account to your local \`.env\`. The project uses the official v1 TTS form API. For Russian homographs, supports a user-editable stress dictionary.
-- **ElevenLabs**: choose a real Russian-speaking voice in ElevenLabs, put \`ELEVENLABS_API_KEY\` and \`ELEVENLABS_VOICE_ID\` in \`.env\`. The system uses \`eleven_multilingual_v2\` and includes preceding/following scene text for continuity.
-- **OpenAI**: extra comparison option. Uses a Russian speech-style instruction and voice \`cedar\` by default, although OpenAI says the voices are primarily optimized for English. **OpenAI has announced that the legacy Speech API models (\`gpt-4o-mini-tts\`, \`tts-1\` and \`tts-1-hd\`) shut down January 6, 2027**; plan a later migration.
-- **macOS \`say\`**: free but less natural; auto-select an installed Russian voice. There must be a Russian voice installed in macOS system settings.
+- **Yandex SpeechKit** (default): choose `ermil` (male), `zahar` (male), `jane` (female), or `marina` (female). Setup: add `YANDEX_API_KEY` from a Yandex Cloud service account to your local `.env`. The project uses the official v1 TTS form API. For Russian homographs, supports a user-editable stress dictionary.
+- **ElevenLabs**: choose a real Russian-speaking voice in ElevenLabs, put `ELEVENLABS_API_KEY` and `ELEVENLABS_VOICE_ID` in `.env`. The system uses `eleven_multilingual_v2` and includes preceding/following scene text for continuity.
+- **OpenAI**: extra comparison option. Uses a Russian speech-style instruction and voice `cedar` by default, although OpenAI says the voices are primarily optimized for English. **OpenAI has announced that the legacy Speech API models (`gpt-4o-mini-tts`, `tts-1` and `tts-1-hd`) shut down January 6, 2027**; plan a later migration.
+- **macOS `say`**: free but less natural; auto-select an installed Russian voice. There must be a Russian voice installed in macOS system settings.
 
 **Quick standalone voice audition**, no script generation or images:
 
-\`\`\`bash
+```bash
 # Recommended budget-friendly first candidate: native Russian voice
 python -m shorts_factory --voice-provider yandex --voice ermil \
   --voice-delivery energetic --speech-speed 1.04 \
@@ -38,21 +38,21 @@ python -m shorts_factory --voice-provider elevenlabs \
 # For a different Russian female/male Yandex voice
 python -m shorts_factory --voice-provider yandex --voice jane \
   --voice-preview 'Почему молния появляется раньше, чем мы слышим гром?'
-\`\`\`
+```
 
-Created file is in \`runs/voice-preview-*/audio_00.mp3\`. Real API calls cost money; \`--demo\` and \`--plan-only\` do not call paid services.
+Created file is in `runs/voice-preview-*/audio_00.mp3`. Real API calls cost money; `--demo` and `--plan-only` do not call paid services.
 
 **Correct accents, ё and abbreviations** by keeping a reviewed JSON file:
 
-\`\`\`bash
+```bash
 cp glossary.example.json glossary.json
 python -m shorts_factory --topic 'Как работает искусственный интеллект?' \
   --script-provider anthropic --image-provider openai --voice-provider yandex \
   --voice ermil --speech-speed 1.04 --voice-delivery energetic \
   --glossary glossary.json --seconds 30
-\`\`\`
+```
 
-\`glossary.json\` can contain \`replacements\` (e.g. \`"ИИ": "искусственный интеллект"\`) and \`yandex_stress\` (e.g. \`"замок": "зам+ок"\`, plus sign before stressed vowel). Stress substitution is case-sensitive and whole-word-only to avoid corrupting unrelated words. **Review homographs before rendering**: a global rule for \`замок\` could be incorrect in another sentence. To protect privacy, do not submit secret scripts to external providers.
+`glossary.json` can contain `replacements` (e.g. `"ИИ": "искусственный интеллект"`) and `yandex_stress` (e.g. `"замок": "зам+ок"`, plus sign before stressed vowel). Stress substitution is case-sensitive and whole-word-only to avoid corrupting unrelated words. **Review homographs before rendering**: a global rule for `замок` could be incorrect in another sentence. To protect privacy, do not submit secret scripts to external providers.
 
 **Mastering:** audio is encoded at AAC 48 kHz / 160 kbps; FFmpeg loudness normalization targets -16 LUFS and limits peaks to -1.5 dBTP, with a short end fade to reduce clicks. Captions remain scene-timed. The code currently sends TTS per scene, not as a single continuous recording: for short videos it is reasonably practical, but speech may not be perfectly seamless. ElevenLabs context helps.
 
