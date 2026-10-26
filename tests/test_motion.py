@@ -4,7 +4,7 @@ import subprocess
 from pathlib import Path
 
 import pytest
-from PIL import ImageChops
+from PIL import ImageChops, ImageStat
 
 from shorts_factory.caption_engine import build_caption_cues
 from shorts_factory.motion import CABLE_KINDS, MotionScene, choose_motion_kinds, render_motion, scene_durations
@@ -48,6 +48,20 @@ def test_unknown_animation_rejected_before_render(tmp_path):
 def test_cable_story_has_all_six_compositions():
     s = Story('Подводные кабели', 'Тест', [Scene('Связь.', 'Связь', '')]*6)
     assert choose_motion_kinds(s) == CABLE_KINDS
+
+
+def test_final_cta_title_fits_and_last_frame_fades_to_designed_background():
+    scenes = [Scene('А если кабель повреждён?', 'ЗНАЛ ОБ ЭТОМ? ПИШИ В КОММЕНТАРИЯХ И СТАВЬ ЛАЙК', '')]
+    story = Story('Подводные кабели', 'Тест', scenes)
+    cues = build_caption_cues(story, [4.])
+    scene = MotionScene(story, 0, 4., 360, 640, 'explainer', 'globe_reveal', cues)
+    assert all(row['inside_safe_zone'] for row in scene.text_geometries)
+    middle = scene.frame(3.3)
+    ending = scene.frame(3.99)
+    middle_delta = sum(ImageStat.Stat(ImageChops.difference(scene.base, middle)).mean)
+    ending_delta = sum(ImageStat.Stat(ImageChops.difference(scene.base, ending)).mean)
+    assert ending_delta < middle_delta * .1
+    assert ImageChops.difference(scene.base, scene.frame(4.)).getbbox() is None
 
 
 @pytest.mark.skipif(not shutil.which('ffmpeg') or not shutil.which('ffprobe'), reason='FFmpeg not installed')

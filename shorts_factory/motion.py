@@ -566,11 +566,14 @@ class MotionScene:
         draw.line((left,y,right,y),fill=(30,51,67),width=max(1,round(self.width*.003)))
         fraction=(self.index+progress)/len(self.story.scenes)
         draw.line((left,y,left+(right-left)*fraction,y),fill=c["accent"],width=max(1,round(self.width*.003)))
-        # Keep first/last frames nonempty: short fades blend toward the designed
-        # background rather than full black, useful for quality inspection.
-        amount=min(_ease(time/.12),_ease((self.duration-time)/.16))
+        # Fade the final scene into its designed background so the Short lands
+        # gently instead of cutting off mid-motion. The short opening fade is
+        # retained for clean first frames; only the final scene gets a longer
+        # ending fade, with no added silent outro.
+        ending_fade = .55 if self.index == len(self.story.scenes)-1 else .16
+        amount=min(_ease(time/.12),_ease((self.duration-time)/ending_fade))
         if amount < 1:
-            canvas=Image.blend(self.base,canvas,.65+.35*amount)
+            canvas=Image.blend(self.base,canvas,amount)
         return canvas
 
 

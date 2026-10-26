@@ -182,6 +182,14 @@ def text_layout(draw: ImageDraw.ImageDraw, text: str, *, width: int, height: int
         # Pillow anchor=lt aligns the visible glyph box (ignores ascender padding).
         x = round((left + right - (bbox[2] - bbox[0])) / 2)
         actual = draw.textbbox((x, y), line, font=font, anchor="lt")
+        # Cyrillic glyphs can have a one-pixel negative side bearing at small
+        # render sizes. Clamp the measured glyph box itself, not only its
+        # nominal advance width, to the safe area used by the quality gate.
+        if actual[0] < left:
+            x += left - actual[0]
+        if actual[2] > right:
+            x -= actual[2] - right
+        actual = draw.textbbox((x, y), line, font=font, anchor="lt")
         placements.append({"text": line, "x": x, "y": y, "bounds": list(actual)})
         y += line_height
     bounds = [min((p["bounds"][0] for p in placements), default=left),
