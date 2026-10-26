@@ -66,8 +66,9 @@ TOPIC: {topic}
 LANGUAGE for title, description, narration and captions: {language}
 VISUAL STYLE: {style}
 VARIANT: {variant}. Produce a meaningfully distinct opening angle, not a near-copy of other variants.
-TARGET DURATION: around {target_seconds} seconds. 3–6 scenes. One single voice sentence (approximately 10–22 words) per scene.
+TARGET DURATION: around {target_seconds} seconds. 3–6 scenes. Target ~2.1–2.5 spoken words per second for the WHOLE VIDEO. Each scene has one short spoken sentence of about 7–15 words; prefer fewer words to rushing. Avoid filler.
 RULES: First scene starts immediately with a precise curiosity hook in the first 2 seconds. Every next scene delivers a clear piece of the answer. Finish with a satisfying specific conclusion. Avoid long introductions, filler, unverified sensationalism and fake statistics. Use simple everyday language. Don't invent news/facts; if a claim requires current evidence and is not supplied, use timeless explanations or explicitly express uncertainty. No manufactured promises of viral reach.
+VOICE READABILITY for Russian: spell ё wherever it is pronounced; expand numbers, units, acronyms and abbreviations to natural spoken Russian in narration (for example, 'пять километров', not '5 км'). Avoid difficult foreign words, unnatural declensions, overlong clauses, and stage directions. A compelling hook must sound like a real Russian creator, not translated marketing copy. Captions can keep digits. Do not add pronunciation markup inside the JSON.
 Each image_prompt: concrete portrait 9:16 illustration brief in ENGLISH, describe visual objects, no lettering, text, branding or watermarks. Every scene should visually differ. Caption: 3–8 impactful words; narration: intelligible and speakable. Include a short truthful description for the upload.
 Return ONLY valid JSON with EXACT shape:
 {{"title":"...","description":"...","scenes":[{{"narration":"...","caption":"...","image_prompt":"..."}}]}}
