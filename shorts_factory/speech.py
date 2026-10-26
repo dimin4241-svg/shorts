@@ -124,10 +124,14 @@ def synthesize_audio(
     if provider == "yandex":
         if not language.lower().startswith("ru"):
             raise ValueError("Yandex SpeechKit v1 configuration is Russian only")
+        body = {"text": text, "lang": "ru-RU", "voice": voice, "speed": f"{speed:.2f}", "format": "mp3"}
+        # SpeechKit's emotion support is voice-specific. Avoid invalid roles.
+        if delivery == "energetic" and voice in {"ermil", "jane", "zahar"}:
+            body["emotion"] = "good"
         content = _post(
             "https://tts.api.cloud.yandex.net/speech/v1/tts:synthesize",
             headers={"Authorization": f"Api-Key {_secret('YANDEX_API_KEY')}"},
-            payload={"text": text, "lang": "ru-RU", "voice": voice, "speed": f"{speed:.2f}", "format": "mp3"},
+            payload=body,
             form=True,
         )
     elif provider == "elevenlabs":
