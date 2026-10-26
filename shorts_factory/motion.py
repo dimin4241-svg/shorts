@@ -28,6 +28,7 @@ PRESETS = {
                   "muted": (51, 71, 103), "land": (36, 74, 90), "ink": (239, 244, 252)},
 }
 CABLE_KINDS = ["globe_dive", "fiber_pulse", "network_flow", "cable_reroute", "route_compare", "globe_reveal"]
+PHONE_KINDS = ["phone_cold", "battery_flow", "voltage_drop", "phone_warm", "phone_reveal"]
 ALIASES = {"world": "globe_dive", "globe": "globe_dive", "ocean": "fiber_pulse", "fiber": "fiber_detail",
            "packets": "network_flow", "reroute": "cable_reroute", "satellite": "globe_reveal",
            "tire_rotate": "tire", "rubber_flex": "tire_tread", "contact_patch": "tire", "sipe_edges": "tire_tread", "tire_reveal": "tire",
@@ -104,6 +105,12 @@ class MotionScene:
         self.text_geometries.append({"role": "diagram_disclosure", **self.disclosure})
 
     def disclosure_layout(self) -> dict:
+        if self.kind in set(PHONE_KINDS) | {"battery_flow", "voltage_drop"}:
+            # Phone drawings extend into the generic disclosure footer. Keep
+            # the schematic label in the open strip below the heading instead.
+            return text_layout(ImageDraw.Draw(self.base), "Схематичная иллюстрация", width=self.width, height=self.height,
+                               center_y=self.height*.270, font_fraction=.026, max_lines=1,
+                               box=(round(self.width*.08), round(self.height*.25), round(self.width*.85), round(self.height*.29)))
         return text_layout(ImageDraw.Draw(self.base), "Схематичная иллюстрация", width=self.width, height=self.height,
                            center_y=self.height*.671, font_fraction=.026, max_lines=1,
                            box=(round(self.width*.08), round(self.height*.655), round(self.width*.85), round(self.height*.69)))
@@ -371,6 +378,127 @@ class MotionScene:
             angle = i*math.tau/6+time*.06
             self.line(draw,[(.76,.35),(.76+math.cos(angle)*.038,.35+math.sin(angle)*.021)],c["accent"],.002)
 
+    def _phone_body(self, draw, *, lit: float, warm: bool = False):
+        """Draw an anonymous phone; the battery icon has no fabricated percentage."""
+        c=self.palette
+        a,b=self.xy(.315,.285),self.xy(.615,.685)
+        edge=c["warm"] if warm else c["muted"]
+        draw.rounded_rectangle((*a,*b),radius=max(3,round(self.width*.035)),
+                               fill=(4,13,24),outline=edge,width=max(2,round(self.width*.008)))
+        sa,sb=self.xy(.332,.31),self.xy(.598,.66)
+        screen_color=_mix((2,8,17),c["warm"] if warm else c["accent"],.12*max(0.,min(1.,lit)))
+        draw.rounded_rectangle((*sa,*sb),radius=max(2,round(self.width*.024)),fill=screen_color)
+        notch_a,notch_b=self.xy(.425,.307),self.xy(.505,.32)
+        draw.rounded_rectangle((*notch_a,*notch_b),radius=max(2,round(self.width*.008)),fill=(4,13,24))
+        # The same three segments remain visible before and after a cold shutdown:
+        # this communicates available charge without inventing a percentage.
+        if lit>.08:
+            ba,bb=self.xy(.404,.455),self.xy(.526,.50)
+            draw.rounded_rectangle((*ba,*bb),radius=max(2,round(self.width*.009)),
+                                   outline=_mix(c["muted"],c["ink"],lit),width=max(2,round(self.width*.004)))
+            terminal=self.xy(.535,.468)
+            draw.rectangle((bb[0],terminal[1],terminal[0],terminal[1]+max(2,round(self.width*.018))),
+                           fill=_mix(c["muted"],c["ink"],lit))
+            inner_left=self.xy(.413,.464)[0]
+            inner_right=self.xy(.517,.492)[0]
+            for i in range(3):
+                x0=inner_left+(inner_right-inner_left)*i/3
+                x1=inner_left+(inner_right-inner_left)*(i+1)/3-round(self.width*.006)
+                fill=_mix(c["muted"],c["warm"] if warm else c["accent"],lit)
+                if x1>x0:
+                    draw.rectangle((round(x0),self.xy(.464,.464)[1],round(x1),self.xy(.464,.492)[1]),fill=fill)
+            # A restrained status glow shows that the screen responds, not that
+            # the battery has gained energy.
+            for i in range(3):
+                self.dot(draw,.405+i*.06,.555,.004,_mix(c["muted"],c["ink"],lit))
+
+    def _phone(self, draw, time: float, progress: float, *, mode: str):
+        c=self.palette
+        if mode=="phone_cold":
+            lit=1-_ease((progress-.28)*2.5)
+        elif mode=="phone_warm":
+            # Warmth returns gradually; it does not promise a repair for a worn
+            # or damaged battery.
+            lit=_ease((progress-.18)*1.7)
+        else:
+            lit=.88+.12*(.5+.5*math.sin(time*1.5))
+        if mode in {"phone_warm","phone_reveal"}:
+            # A warm pocket/halo sits behind the device, inside the illustration zone.
+            draw.rounded_rectangle((self.xy(.20,.49),self.xy(.73,.70)),radius=max(3,round(self.width*.05)),
+                                   fill=_mix(c["top"],c["warm"],.17 if mode=="phone_warm" else .09),
+                                   outline=_mix(c["muted"],c["warm"],.56),width=max(1,round(self.width*.004)))
+        self._phone_body(draw,lit=lit,warm=mode in {"phone_warm","phone_reveal"})
+        if mode=="phone_cold":
+            for i in range(9):
+                x=.20+(i*.173+time*.013)% .60
+                y=.335+(i*.087)% .30
+                self.dot(draw,x,y,.003,c["accent"])
+                if i%3==0:
+                    self.line(draw,[(x-.012,y),(x+.012,y)],c["ink"],.0015)
+                    self.line(draw,[(x,y-.014),(x,y+.014)],c["ink"],.0015)
+        elif mode=="phone_warm":
+            for i in range(5):
+                y=.39+i*.045
+                self.line(draw,[(.23,y+.012*math.sin(time+i)),(.27,y)],
+                          _mix(c["muted"],c["warm"],lit),.002)
+        else:
+            # Quiet outward pulses become visible as the working screen steadies.
+            pulse=.018+.008*math.sin(time*2)
+            pulse_color=_mix(c["muted"],c["warm"],lit)
+            self.line(draw,[(.29,.43),(.27-pulse,.43),(.25-pulse,.47)],pulse_color,.0025)
+            self.line(draw,[(.64,.43),(.66+pulse,.43),(.68+pulse,.47)],pulse_color,.0025)
+
+    def _battery_flow(self, draw, time: float, progress: float):
+        c=self.palette
+        a,b=self.xy(.23,.385),self.xy(.68,.565)
+        draw.rounded_rectangle((*a,*b),radius=max(3,round(self.width*.035)),fill=(6,19,31),
+                               outline=c["muted"],width=max(2,round(self.width*.006)))
+        term_a,term_b=self.xy(.68,.435),self.xy(.715,.515)
+        draw.rounded_rectangle((*term_a,*term_b),radius=max(2,round(self.width*.012)),fill=c["muted"])
+        # Stable charge bars contrast with the slower moving charge carriers.
+        for i in range(4):
+            x=.27+i*.095
+            self.line(draw,[(x,.425),(x,.525)],_mix(c["top"],c["muted"],.55),.002)
+        speed=.10*(1-.62*_ease(progress))
+        for i in range(9):
+            x=.255+(i*.111+time*speed)% .40
+            y=.415+(i%3)*.052
+            self.dot(draw,x,y,.006,c["accent"] if i%2 else c["warm"],glow=i%3==0)
+        for i in range(6):
+            angle=i*math.tau/6+time*.035
+            self.line(draw,[(.76,.355),(.76+math.cos(angle)*.032,.355+math.sin(angle)*.021)],c["accent"],.002)
+
+    def _voltage_drop(self, draw, time: float, progress: float):
+        c=self.palette
+        # Schematic battery feeding a phone through a simple voltage indicator;
+        # there are no numeric values or claims about a specific device.
+        a,b=self.xy(.18,.42),self.xy(.36,.565)
+        draw.rounded_rectangle((*a,*b),radius=max(2,round(self.width*.018)),fill=(6,19,31),
+                               outline=c["muted"],width=max(2,round(self.width*.006)))
+        self.line(draw,[(.36,.49),(.49,.49),(.57,.49)],
+                  _mix(c["muted"],c["accent"],_ease(progress*3)),.004)
+        for i in range(4):
+            q=(time*.22+i*.23)%1
+            x=.37+q*.18
+            self.dot(draw,x,.49,.006,_mix(c["warm"],c["muted"],_ease((progress-.3)*1.4)))
+        # A vertical indicator lowers as load grows; only direction is shown.
+        gx,gy=self.xy(.485,.385),self.xy(.515,.585)
+        draw.rounded_rectangle((*gx,*gy),radius=max(2,round(self.width*.01)),
+                               outline=c["muted"],width=max(1,round(self.width*.004)))
+        fill_height=.15*(1-.66*_ease(progress))
+        top=self.xy(.494,.575-fill_height)[1]
+        bottom=self.xy(.506,.575)[1]
+        draw.rounded_rectangle((self.xy(.494,.385)[0],top,self.xy(.506,.385)[0],bottom),
+                               radius=max(1,round(self.width*.006)),fill=_mix(c["accent"],c["warm"],_ease(progress)))
+        # Small receiver screen darkens as available voltage falls.
+        pa,pb=self.xy(.61,.375),self.xy(.77,.605)
+        draw.rounded_rectangle((*pa,*pb),radius=max(2,round(self.width*.024)),fill=(4,13,24),
+                               outline=c["muted"],width=max(1,round(self.width*.005)))
+        sa,sb=self.xy(.625,.395),self.xy(.755,.585)
+        screen=_mix((2,8,17),c["accent"],.16*(1-_ease((progress-.22)*2)))
+        draw.rounded_rectangle((*sa,*sb),radius=max(2,round(self.width*.014)),fill=screen)
+        self.dot(draw,.69,.49,.012,_mix(c["warm"],c["muted"],_ease((progress-.25)*2)))
+
     def _orbit(self, draw, time, progress):
         c=self.palette
         cx,cy=self.xy(.465,.48)
@@ -518,6 +646,12 @@ class MotionScene:
             self._airflow(draw,time,progress)
         elif self.kind=="power":
             self._power(draw,time,progress)
+        elif self.kind in {"phone_cold","phone_warm","phone_reveal"}:
+            self._phone(draw,time,progress,mode=self.kind)
+        elif self.kind=="battery_flow":
+            self._battery_flow(draw,time,progress)
+        elif self.kind=="voltage_drop":
+            self._voltage_drop(draw,time,progress)
         elif self.kind=="orbit":
             self._orbit(draw,time,progress)
         elif self.kind in {"tire","tire_tread"}:
@@ -569,7 +703,7 @@ class MotionScene:
         # Fade the final scene into its designed background so the Short lands
         # gently instead of cutting off mid-motion. The short opening fade is
         # retained for clean first frames; only the final scene gets a longer
-        # ending fade, with no added silent outro.
+        # ending fade, followed by a short natural hold after the final line.
         ending_fade = .55 if self.index == len(self.story.scenes)-1 else .16
         amount=min(_ease(time/.12),_ease((self.duration-time)/ending_fade))
         if amount < 1:
@@ -579,6 +713,8 @@ class MotionScene:
 
 def choose_motion_kinds(story: Story) -> list[str]:
     text=(story.title+" "+" ".join(scene.narration for scene in story.scenes)).lower()
+    if any(word in text for word in ("телефон", "аккумулятор", "батаре", "мороз", "холод")):
+        return [PHONE_KINDS[i % len(PHONE_KINDS)] for i in range(len(story.scenes))]
     if any(word in text for word in ("кабел","оптоволок","континент")):
         return [CABLE_KINDS[i % len(CABLE_KINDS)] for i in range(len(story.scenes))]
     if any(word in text for word in ("самолёт","самолет","крыло","двигател")):
@@ -595,14 +731,15 @@ def choose_motion_kinds(story: Story) -> list[str]:
 
 
 def scene_durations(audios: list[Path | None], *, target_seconds: float, fps: int) -> list[float]:
-    """Narration duration wins over requested runtime. No speed/rate manipulation."""
+    """Narration duration wins; the last spoken scene gets a brief visual/audio tail."""
     if not audios or not math.isfinite(target_seconds) or not 1 <= target_seconds <= 600:
         raise ValueError("Target duration must be between 1 and 600 seconds")
     if not 1 <= fps <= 60:
         raise ValueError("FPS must be between 1 and 60")
     result=[]
-    for audio in audios:
-        duration=media_duration(Path(audio))+.08 if audio else target_seconds/len(audios)
+    for index,audio in enumerate(audios):
+        tail=.08+(.75 if index==len(audios)-1 else 0.)
+        duration=media_duration(Path(audio))+tail if audio else target_seconds/len(audios)
         if not math.isfinite(duration) or duration<=0 or duration>600:
             raise ValueError("Unexpected narration duration")
         result.append(math.ceil(duration*fps)/fps)
@@ -699,7 +836,7 @@ def render_motion(story: Story, audios: list[Path | None], dest: Path, *, width:
     kinds=motion_kinds or choose_motion_kinds(story)
     if len(kinds)!=len(story.scenes) or (images is not None and len(images)!=len(story.scenes)):
         raise ValueError("Motion kinds and images must match storyboard scenes")
-    supported=set(CABLE_KINDS)|{"fiber_detail","network","airflow","power","orbit","tire","tire_tread","sound"}|set(ALIASES)
+    supported=set(CABLE_KINDS)|{"fiber_detail","network","airflow","power","orbit","tire","tire_tread","sound"}|set(PHONE_KINDS)|{"battery_flow","voltage_drop"}|set(ALIASES)
     if any(kind not in supported for kind in kinds):
         raise ValueError("Unknown motion kind in storyboard")
     dest=Path(dest)

@@ -79,6 +79,17 @@
       "verification": "Read public source through web research; no authenticated or paid access.",
       "notes": "Временное сокращение времени работы и выключение на холоде; поведение зависит от устройства."
     },
+    "google-pixel-cold": {
+      "id": "google-pixel-cold",
+      "title": "Google Pixel Help — Check & understand your Pixel’s temperature",
+      "url": "https://support.google.com/pixelphone/answer/15679416?hl=en",
+      "kind": "manufacturer",
+      "checked_at": "2026-10-26",
+      "status": "accessible",
+      "published_at": null,
+      "verification": "Read public source through web research; no authenticated or paid access.",
+      "notes": "Google says a Pixel below 0°C may shut down suddenly and recommends letting the phone warm gradually. This is Pixel-specific guidance."
+    },
     "nist-battery": {
       "id": "nist-battery",
       "title": "NIST — Power Supply Issues in Battery Reliant Wireless Sensor Networks",
@@ -383,9 +394,10 @@
       ],
       "claim": "Сильный холод может временно сократить время работы телефона и вызвать выключение; после нормального согревания работа может восстановиться.",
       "source_ids": [
-        "apple-cold"
+        "apple-cold",
+        "google-pixel-cold"
       ],
-      "scope_limit": "Источник о iPhone/iPad; не гарантировать восстановление неисправной или старой батареи.",
+      "scope_limit": "Сведения производителей относятся к их устройствам; не гарантировать восстановление неисправной или старой батареи.",
       "checked_at": "2026-10-26",
       "status": "supported",
       "review_required_before_publish": false

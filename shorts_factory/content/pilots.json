@@ -412,49 +412,50 @@
       ]
     },
     "cold-phone": {
-      "title": "Почему телефон выключается на морозе?",
-      "description": "Холод может временно уменьшать доступную мощность батареи. Что происходит внутри и почему телефон иногда оживает в тепле. Схематическая анимация. Источники: Apple, NIST; проверены 26.10.2026. https://support.apple.com/en-us/118431 ; https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=911922",
+      "title": "Почему телефон выключился на морозе, а потом ожил?",
+      "description": "На холоде аккумулятору труднее отдавать энергию, поэтому смартфон может временно отключиться. После постепенного согревания его работа может восстановиться — это не всегда означает, что заряд исчез или телефон сломан. Случалось такое? Напиши модель телефона и температуру в комментариях. Если полезно — поставь лайк. Схематическая анимация. Источники: Apple Support, Google Pixel Help, NIST.",
       "tags": [
         "телефон",
         "батарея",
         "мороз",
+        "смартфон",
         "наука",
         "Невидимый мир"
       ],
       "style": "EXPLAINER",
       "hooks": [
         {
-          "text": "Телефон замёрз и выключился. Заряд правда исчез?",
+          "text": "Телефон погас на морозе. Заряд исчез?",
+          "clarity": 5,
+          "truthfulness": 5,
+          "intrigue": 5,
+          "selection_note": "Короткое событие и вопрос о заряде сразу задают загадку без преувеличения."
+        },
+        {
+          "text": "Почему телефон отключился на морозе, хотя заряд ещё оставался?",
           "clarity": 5,
           "truthfulness": 5,
           "intrigue": 4,
-          "selection_note": "Выбран: сразу ставит конкретный вопрос без преувеличения."
+          "selection_note": "Прямой и точный вариант для последовательного теста."
         },
         {
-          "text": "Почему на морозе батарея сдаётся раньше тебя?",
+          "text": "Телефон погас, но не сломался? Вот что может сделать холод.",
           "clarity": 4,
           "truthfulness": 5,
           "intrigue": 5,
-          "selection_note": "Альтернатива для небольшого последовательного теста."
-        },
-        {
-          "text": "В тепле телефон ожил без розетки. Как это возможно?",
-          "clarity": 4,
-          "truthfulness": 5,
-          "intrigue": 4,
-          "selection_note": "Альтернатива для небольшого последовательного теста."
+          "selection_note": "Контрастная версия; важно сохранить оговорку про состояние аккумулятора."
         }
       ],
       "chosen_hook_index": 0,
-      "hook_selection": "Оцениваем ясность и правдивость прежде интриги; баллы субъективные, без имитации A/B-данных.",
+      "hook_selection": "Редакционная гипотеза без просмотровых метрик: начать с видимого отключения, затем сразу поставить вопрос о заряде.",
       "visual_assets": [
-        "Оригинальный силуэт телефона без бренда",
-        "Схема батареи",
-        "Движущиеся частицы и индикатор напряжения без чисел",
-        "Тёплый карман"
+        "Анонимный силуэт телефона с гаснущим экраном",
+        "Схема батареи с постоянно видимым зарядом",
+        "Схематичный индикатор просадки напряжения без чисел",
+        "Тёплый карман и повторное включение экрана"
       ],
-      "voice_plan": "Сначала аудиопревью Yandex SpeechKit / ermil; спокойная любознательная подача, естественные паузы. При наличии ключа и подтверждённого русского voice ID сравнить ElevenLabs Multilingual v2. Готовый звук прослушать человеком; -16 LUFS, потолок -1.5 dBTP. Без музыки.",
-      "edit_plan": "Начать с внезапно потухшего экрана, раскрыть батарею, замедлить частицы без стоп-кадра, вернуть телефон в карман. Цветовой переход из холодного синего в тёплый янтарный; без советов нагревать прибор на батарее отопления.",
+      "voice_plan": "Предпочтительный частный тест — ru-RU-DmitryNeural, если сервис выдаёт полноценный звук. Не заменять другим голосом без прослушивания пользователем. Для публикации использовать официальный синтезатор с подтверждёнными правами; проверить естественность, паузы и синхронность.",
+      "edit_plan": "С первых кадров показать погасший экран на морозе; быстрый переход внутрь батареи; показать заряд без процентов и отдельную условную просадку напряжения; вернуть изображение телефона в тёплый карман; завершить коротким вопросом об опыте зрителя и плавным затуханием в фирменный фон. Схемы не выдавать за реальные измерения; не советовать резко нагревать устройство.",
       "music": {
         "use": false,
         "license": null
@@ -463,109 +464,109 @@
       "timing_notice": "Это монтажные ориентиры. После аудиопревью измерить реальную речь, сдвинуть сцены; не ускорять голос ради заданного числа секунд.",
       "variants": {
         "28": {
-          "spoken_word_count": 57,
+          "spoken_word_count": 55,
           "scenes": [
             {
               "scene": 1,
-              "narration": "Телефон замёрз и выключился. Заряд правда исчез?",
-              "caption": "ЗАРЯД ПРАВДА ИСЧЕЗ?",
-              "image_prompt": "Portrait 9:16 original vector explainer, anonymous phone, clean navy cyan amber palette, no lettering, no brands, no watermark. A phone in a gloved hand, screen turning dark in winter.",
-              "motion_kind": "power",
+              "narration": "Телефон погас на морозе. Заряд исчез? А в тепле он снова включился.",
+              "caption": "ЗАРЯД ИСЧЕЗ?",
+              "image_prompt": "Portrait 9:16 original clean vector animation, anonymous unbranded smartphone and battery diagram, clear cold blue to warm amber transition, no text, no logos, no numeric battery or voltage claims, no watermark.",
+              "motion_kind": "phone_cold",
               "start_hint": 0,
-              "end_hint": 3.44,
+              "end_hint": 5.0,
               "fact_ids": [
                 "cold-device"
               ],
               "beats": [
-                "Появляется морозный воздух",
-                "Экран гаснет"
+                "Экран телефона гаснет среди снежинок",
+                "Короткий визуальный переход от холода к теплу"
               ],
               "visual_label": "Схематическая иллюстрация; не документальная запись.",
               "planned_motion_kind": "phone_cold"
             },
             {
               "scene": 2,
-              "narration": "На холоде химические процессы в батарее замедляются, а внутреннее сопротивление растёт.",
-              "caption": "ХОЛОД ЗАМЕДЛЯЕТ ПРОЦЕССЫ",
-              "image_prompt": "Portrait 9:16 original vector explainer, anonymous phone, clean navy cyan amber palette, no lettering, no brands, no watermark. Battery cutaway with charge carriers moving slower, schematic only.",
-              "motion_kind": "power",
-              "start_hint": 3.44,
-              "end_hint": 8.84,
+              "narration": "Не совсем. На холоде аккумулятору труднее отдавать энергию.",
+              "caption": "ХОЛОД МЕШАЕТ БАТАРЕЕ",
+              "image_prompt": "Portrait 9:16 original clean vector animation, anonymous unbranded smartphone and battery diagram, clear cold blue to warm amber transition, no text, no logos, no numeric battery or voltage claims, no watermark.",
+              "motion_kind": "battery_flow",
+              "start_hint": 5.0,
+              "end_hint": 11.0,
               "fact_ids": [
                 "cold-chemistry"
               ],
               "beats": [
-                "Камера входит в батарею",
-                "Частицы движутся медленнее"
+                "Крупный план батареи",
+                "Движение частиц замедляется; заряд остаётся схематически постоянным"
               ],
               "visual_label": "Схематическая иллюстрация; не документальная запись.",
               "planned_motion_kind": "battery_flow"
             },
             {
               "scene": 3,
-              "narration": "Под нагрузкой напряжение сильнее проседает. Телефону может не хватить питания, хотя запас энергии ещё есть.",
-              "caption": "МОЩНОСТИ МОЖЕТ НЕ ХВАТИТЬ",
-              "image_prompt": "Portrait 9:16 original vector explainer, anonymous phone, clean navy cyan amber palette, no lettering, no brands, no watermark. Simple load and voltage diagram without numbers.",
-              "motion_kind": "power",
-              "start_hint": 8.84,
-              "end_hint": 16.21,
+              "narration": "Под нагрузкой напряжение проседает, и смартфон может отключиться, хотя заряд ещё остался.",
+              "caption": "ЗАРЯД ЕСТЬ — МОЩНОСТИ МОЖЕТ НЕ ХВАТИТЬ",
+              "image_prompt": "Portrait 9:16 original clean vector animation, anonymous unbranded smartphone and battery diagram, clear cold blue to warm amber transition, no text, no logos, no numeric battery or voltage claims, no watermark.",
+              "motion_kind": "voltage_drop",
+              "start_hint": 11.0,
+              "end_hint": 17.0,
               "fact_ids": [
                 "cold-chemistry",
                 "cold-device"
               ],
               "beats": [
-                "Появляется нагрузка",
-                "Условный уровень снижается"
+                "Батарея соединяется с телефоном",
+                "Условный индикатор напряжения опускается без чисел"
               ],
               "visual_label": "Схематическая иллюстрация; не документальная запись.",
               "planned_motion_kind": "voltage_drop"
             },
             {
               "scene": 4,
-              "narration": "После постепенного согревания работа может восстановиться. Поэтому заряд иногда будто возвращается без розетки.",
-              "caption": "В ТЕПЛЕ РАБОТА МОЖЕТ ВЕРНУТЬСЯ",
-              "image_prompt": "Portrait 9:16 original vector explainer, anonymous phone, clean navy cyan amber palette, no lettering, no brands, no watermark. The phone in an inner coat pocket gradually warming and lighting up.",
-              "motion_kind": "power",
-              "start_hint": 16.21,
-              "end_hint": 22.6,
+              "narration": "После постепенного согревания работа батареи может восстановиться. Это не обязательно поломка.",
+              "caption": "В ТЕПЛЕ РАБОТА МОЖЕТ ВОССТАНОВИТЬСЯ",
+              "image_prompt": "Portrait 9:16 original clean vector animation, anonymous unbranded smartphone and battery diagram, clear cold blue to warm amber transition, no text, no logos, no numeric battery or voltage claims, no watermark.",
+              "motion_kind": "phone_warm",
+              "start_hint": 17.0,
+              "end_hint": 22.5,
               "fact_ids": [
                 "cold-device"
               ],
               "beats": [
-                "Телефон перемещается в карман",
-                "Постепенно возвращается свет"
+                "Телефон попадает в тёплый карман",
+                "Экран загорается постепенно"
               ],
               "visual_label": "Схематическая иллюстрация; не документальная запись.",
               "planned_motion_kind": "phone_warm"
             },
             {
               "scene": 5,
-              "narration": "Но это не обещание для любой батареи: её состояние тоже важно.",
-              "caption": "ЭТО НЕ ВСЕГДА ПОТЕРЯ ЗАРЯДА",
-              "image_prompt": "Portrait 9:16 original vector explainer, anonymous phone, clean navy cyan amber palette, no lettering, no brands, no watermark. Battery and phone shown together, end on warm stable screen.",
-              "motion_kind": "power",
-              "start_hint": 22.6,
-              "end_hint": 28,
+              "narration": "Бывало? Напиши модель телефона и температуру в комментариях. Если помогло, поставь лайк.",
+              "caption": "У ТЕБЯ ТАК БЫЛО? НАПИШИ В КОММЕНТАРИЯХ",
+              "image_prompt": "Portrait 9:16 original clean vector animation, anonymous unbranded smartphone and battery diagram, clear cold blue to warm amber transition, no text, no logos, no numeric battery or voltage claims, no watermark.",
+              "motion_kind": "phone_reveal",
+              "start_hint": 22.5,
+              "end_hint": 28.0,
               "fact_ids": [
                 "cold-device"
               ],
               "beats": [
-                "Возврат к целому телефону",
-                "Финальный устойчивый кадр"
+                "Телефон остаётся включённым",
+                "Вопрос удерживается на экране; финал плавно затухает"
               ],
               "visual_label": "Схематическая иллюстрация; не документальная запись.",
               "planned_motion_kind": "phone_reveal"
             }
           ],
-          "estimated_speech_words_per_second": 2.04
+          "estimated_speech_words_per_second": 1.96
         },
         "20": {
           "spoken_word_count": 44,
           "scenes": [
             {
               "scene": 1,
-              "narration": "Телефон замёрз и выключился. Заряд правда исчез?",
-              "caption": "ЗАРЯД ПРАВДА ИСЧЕЗ?",
+              "narration": "Телефон погас на морозе. Заряд исчез?",
+              "caption": "ЗАРЯД ИСЧЕЗ?",
               "image_prompt": "Portrait 9:16 original vector explainer, anonymous phone, clean navy cyan amber palette, no lettering, no brands, no watermark. A phone in a gloved hand, screen turning dark in winter.",
               "motion_kind": "power",
               "start_hint": 0,
@@ -600,8 +601,8 @@
             },
             {
               "scene": 3,
-              "narration": "Под нагрузкой напряжение падает, и питание может отключиться.",
-              "caption": "МОЩНОСТИ МОЖЕТ НЕ ХВАТИТЬ",
+              "narration": "Под нагрузкой падает напряжение: телефон отключается, хотя заряд ещё есть.",
+              "caption": "ОТКЛЮЧИЛСЯ, ХОТЯ ЗАРЯД ЕСТЬ",
               "image_prompt": "Portrait 9:16 original vector explainer, anonymous phone, clean navy cyan amber palette, no lettering, no brands, no watermark. Simple load and voltage diagram without numbers.",
               "motion_kind": "power",
               "start_hint": 7.27,
@@ -637,8 +638,8 @@
             },
             {
               "scene": 5,
-              "narration": "Так бывает при временном падении доступной мощности, а не обязательно исчезновении всей энергии.",
-              "caption": "ЭТО НЕ ВСЕГДА ПОТЕРЯ ЗАРЯДА",
+              "narration": "Бывало? Напиши модель телефона и температуру в комментариях. Если помогло, поставь лайк.",
+              "caption": "БЫЛО ТАК? НАПИШИ В КОММЕНТАРИЯХ",
               "image_prompt": "Portrait 9:16 original vector explainer, anonymous phone, clean navy cyan amber palette, no lettering, no brands, no watermark. Battery and phone shown together, end on warm stable screen.",
               "motion_kind": "power",
               "start_hint": 14.09,
@@ -657,12 +658,12 @@
           "estimated_speech_words_per_second": 2.2
         },
         "40": {
-          "spoken_word_count": 83,
+          "spoken_word_count": 73,
           "scenes": [
             {
               "scene": 1,
-              "narration": "Телефон замёрз и выключился. Заряд правда исчез? Иногда он оживает уже в тёплом кармане.",
-              "caption": "ЗАРЯД ПРАВДА ИСЧЕЗ?",
+              "narration": "Телефон погас на морозе. Заряд исчез? В тепле он снова включился. Почему?",
+              "caption": "ЗАРЯД ИСЧЕЗ? ПОЧЕМУ ОЖИЛ?",
               "image_prompt": "Portrait 9:16 original vector explainer, anonymous phone, clean navy cyan amber palette, no lettering, no brands, no watermark. A phone in a gloved hand, screen turning dark in winter.",
               "motion_kind": "power",
               "start_hint": 0,
@@ -734,8 +735,8 @@
             },
             {
               "scene": 5,
-              "narration": "Но холод не делает батарею вечной: результат зависит от устройства и состояния аккумулятора. Временный эффект и неисправность — разные вещи.",
-              "caption": "ЭТО НЕ ВСЕГДА ПОТЕРЯ ЗАРЯДА",
+              "narration": "Бывало? Напиши модель телефона и температуру в комментариях. Если помогло, поставь лайк.",
+              "caption": "БЫЛО ТАК? НАПИШИ В КОММЕНТАРИЯХ",
               "image_prompt": "Portrait 9:16 original vector explainer, anonymous phone, clean navy cyan amber palette, no lettering, no brands, no watermark. Battery and phone shown together, end on warm stable screen.",
               "motion_kind": "power",
               "start_hint": 30.36,
@@ -751,13 +752,14 @@
               "planned_motion_kind": "phone_reveal"
             }
           ],
-          "estimated_speech_words_per_second": 2.08
+          "estimated_speech_words_per_second": 1.82
         }
       },
       "motion_supported": false,
       "motion_status": "family_motion_preview_needs_scene_specific_visual_QA",
       "source_urls": [
         "https://support.apple.com/en-us/118431",
+        "https://support.google.com/pixelphone/answer/15679416?hl=en",
         "https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=911922",
         "https://cmp.ucsd.edu/publication/s41560-021-00783-z/055.s41560-021-00783-z.pdf"
       ]

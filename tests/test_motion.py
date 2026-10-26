@@ -7,7 +7,7 @@ import pytest
 from PIL import ImageChops, ImageStat
 
 from shorts_factory.caption_engine import build_caption_cues
-from shorts_factory.motion import CABLE_KINDS, MotionScene, choose_motion_kinds, render_motion, scene_durations
+from shorts_factory.motion import CABLE_KINDS, PHONE_KINDS, MotionScene, choose_motion_kinds, render_motion, scene_durations
 from shorts_factory.story import Scene, Story
 
 
@@ -19,6 +19,15 @@ def test_scene_duration_uses_audio_not_requested_target(monkeypatch):
     assert durations[1] == 2.
 
 
+def test_last_spoken_scene_has_a_brief_natural_ending_hold(monkeypatch):
+    monkeypatch.setattr('shorts_factory.motion.media_duration', lambda audio: {'line.wav': 2.0, 'cta.wav': 2.4}[Path(audio).name])
+    durations = scene_durations([Path('line.wav'), Path('cta.wav')], target_seconds=4, fps=30)
+    assert durations[0] >= 2.08
+    assert durations[0] < 2.08 + 1/30
+    assert durations[1] >= 3.23
+    assert durations[1] < 3.23 + 1/30
+
+
 @pytest.mark.parametrize('fps', [24, 30])
 def test_supported_frame_rates_do_not_drop_audio(monkeypatch, fps):
     monkeypatch.setattr('shorts_factory.motion.media_duration', lambda _: 4.07)
@@ -27,7 +36,7 @@ def test_supported_frame_rates_do_not_drop_audio(monkeypatch, fps):
     assert abs(round(result*fps) - result*fps) < .00001
 
 
-@pytest.mark.parametrize('kind', CABLE_KINDS + ['fiber_detail', 'airflow', 'power', 'orbit', 'tire', 'tire_tread', 'sound'])
+@pytest.mark.parametrize('kind', CABLE_KINDS + ['fiber_detail', 'airflow', 'power', 'orbit', 'tire', 'tire_tread', 'sound'] + PHONE_KINDS + ['battery_flow', 'voltage_drop'])
 def test_every_composition_has_real_object_motion_and_safe_text(kind):
     s = Story('Кабели', 'Тест', [Scene('Данные проходят под водой.', 'Интернет под водой', '')])
     cues = build_caption_cues(s, [4.])
@@ -48,6 +57,22 @@ def test_unknown_animation_rejected_before_render(tmp_path):
 def test_cable_story_has_all_six_compositions():
     s = Story('Подводные кабели', 'Тест', [Scene('Связь.', 'Связь', '')]*6)
     assert choose_motion_kinds(s) == CABLE_KINDS
+
+
+def test_cold_phone_story_gets_a_phone_specific_visual_sequence():
+    story = Story('Почему телефон гаснет на морозе?', 'Тест',
+                  [Scene('Телефон отключился.', 'Телефон выключен', '') for _ in range(5)])
+    assert choose_motion_kinds(story) == PHONE_KINDS
+
+
+def test_phone_schematic_label_stays_between_heading_and_illustration():
+    story = Story('Телефон', 'Тест', [Scene('Экран погас.', 'ЗАРЯД ИСЧЕЗ?', '')])
+    scene = MotionScene(story, 0, 4., 360, 640, 'explainer', 'phone_cold',
+                        build_caption_cues(story, [4.]))
+    title = next(row for row in scene.text_geometries if row['role'] == 'scene_heading')
+    label = next(row for row in scene.text_geometries if row['role'] == 'diagram_disclosure')
+    assert title['bounds'][3] < label['bounds'][1]
+    assert label['bounds'][3] < 640 * .285
 
 
 def test_final_cta_title_fits_and_last_frame_fades_to_designed_background():
