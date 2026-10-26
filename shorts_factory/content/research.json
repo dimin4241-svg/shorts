@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "researched_at": "2026-10-26",
+  "timezone": "Asia/Yekaterinburg",
+  "method": "Публичные официальные страницы и первичные материалы. Проверка через доступный web-инструмент без обхода авторизации, ограничений или captcha.",
+  "windows_requested": [
+    "72h",
+    "7d",
+    "30d"
+  ],
+  "youtube": {
+    "status": "metrics_unavailable_in_this_editorial_pass",
+    "source_url": "https://developers.google.com/youtube/v3",
+    "windows": {
+      "72h": null,
+      "7d": null,
+      "30d": null
+    },
+    "reason": "В этом редакционном исследовании не получена авторизованная/ключевая выгрузка списка видео и statistics. Документация API не считается метриками. См. вывод trend_research для состояния настроенного ключа.",
+    "competition": null
+  },
+  "google_trends": {
+    "status": "public_24h_snapshot_available",
+    "source_url": "https://trends.google.com/trending?geo=RU",
+    "geo": "RU",
+    "window": "24h",
+    "checked_at": "2026-10-26",
+    "observations": [
+      {
+        "kind": "broad_query_only",
+        "query": "нефть",
+        "reported_search_volume": "20K+",
+        "reported_growth": "1,000%",
+        "window": "24h",
+        "geo": "RU",
+        "source_url": "https://trends.google.com/trending?geo=RU",
+        "checked_at": "2026-10-26",
+        "limit": "Не точная тема ролика и не спрос на Shorts; причин всплеска не установлено."
+      },
+      {
+        "kind": "broad_query_only",
+        "query": "банк",
+        "reported_search_volume": "20K+",
+        "reported_growth": "800%",
+        "window": "24h",
+        "geo": "RU",
+        "source_url": "https://trends.google.com/trending?geo=RU",
+        "checked_at": "2026-10-26",
+        "limit": "Многозначный широкий запрос; интерес к механике перевода не доказан."
+      },
+      {
+        "kind": "related_query",
+        "query": "зимняя шина",
+        "reported_search_volume": "50K+",
+        "reported_growth": "1,000%",
+        "window": "24h",
+        "geo": "RU",
+        "source_url": "https://trends.google.com/trending?geo=RU",
+        "checked_at": "2026-10-26",
+        "limit": "Поисковый спрос не измеряет просмотры/удержание видео и может быть покупательским."
+      },
+      {
+        "kind": "related_broad_query_only",
+        "query": "пд-8",
+        "reported_search_volume": "10K+",
+        "reported_growth": "1,000%",
+        "window": "24h",
+        "geo": "RU",
+        "source_url": "https://trends.google.com/trending?geo=RU",
+        "checked_at": "2026-10-26",
+        "limit": "ПД-8 — конкретный двигатель. Наш сюжет о принципе турбовентилятора; связь спроса гипотетическая."
+      }
+    ],
+    "exact_pilot_query_metrics": null,
+    "limitations": [
+      "Россия не равна всем русскоязычным зрителям.",
+      "Поисковые запросы не измеряют просмотры Shorts и могут иметь покупательский либо новостной смысл.",
+      "Это единичный срез, не временной ряд за 72 часа, 7 или 30 дней.",
+      "Пороговые значения 50K+ и 20K+ не являются точными числами.",
+      "Изменение показателей и причин всплеска не исследовано."
+    ]
+  },
+  "tiktok": {
+    "status": "shell_only_relevant_metrics_unavailable",
+    "source_url": "https://ads.tiktok.com/creative/creativeCenter/trends",
+    "checked_at": "2026-10-26",
+    "metrics": null,
+    "reason": "Creative Center доступен публично, но страница Trends в доступном текстовом ответе не содержит проверяемых российских результатов по этим темам. Рекламные примеры с главной страницы не используем как спрос на научпоп."
+  },
+  "editorial_decision": "Первый сюжет обязателен по брифу и имеет проверяемый механизм и сильную наглядность. Зимняя шина — дополнительная идея с наблюдаемым связанным поисковым сигналом. Остальные темы остаются гипотезами. Популярность и конкуренция не заменены редакционными баллами."
+}

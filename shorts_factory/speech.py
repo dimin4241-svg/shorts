@@ -29,6 +29,8 @@ RU_STYLE_INSTRUCTIONS = {
 def provider_voice(provider: str, requested: str) -> str:
     if requested:
         return requested
+    if provider == "azure":
+        return "ru-RU-DmitryNeural"
     if provider == "elevenlabs":
         name = os.getenv("ELEVENLABS_VOICE_ID", "").strip()
         if not name:

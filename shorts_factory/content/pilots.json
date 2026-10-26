@@ -1,0 +1,1806 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-26",
+  "pilots": {
+    "submarine-cables": {
+      "title": "Почему интернет между материками идёт по дну океана?",
+      "description": "Почему межконтинентальный интернет зависит от оптоволокна и резервных маршрутов. Схематическая анимация. Источники проверены 26.10.2026: https://www.itu.int/digital-resilience/submarine-cables/ ; https://www.nokia.com/optical-networks/subsea-network-solutions/ ; https://www.internetsociety.org/resources/policybriefs/2025/enhancing-the-resilience-of-submarine-internet-infrastructure/",
+      "tags": [
+        "подводные кабели",
+        "интернет",
+        "оптоволокно",
+        "Невидимый мир",
+        "Shorts"
+      ],
+      "style": "EXPLAINER",
+      "hooks": [
+        {
+          "text": "Почему интернет между материками идёт по дну океана?",
+          "clarity": 5,
+          "truthfulness": 5,
+          "intrigue": 4,
+          "selection_note": "Выбран: сразу ставит конкретный вопрос без преувеличения."
+        },
+        {
+          "text": "У беспроводного мира есть провода на дне океана. Почему?",
+          "clarity": 4,
+          "truthfulness": 5,
+          "intrigue": 5,
+          "selection_note": "Альтернатива для небольшого последовательного теста."
+        },
+        {
+          "text": "Спутники в небе. Почему же данные между материками идут под водой?",
+          "clarity": 4,
+          "truthfulness": 5,
+          "intrigue": 4,
+          "selection_note": "Альтернатива для небольшого последовательного теста."
+        }
+      ],
+      "chosen_hook_index": 0,
+      "hook_selection": "Оцениваем ясность и правдивость прежде интриги; баллы субъективные, без имитации A/B-данных.",
+      "visual_assets": [
+        "Условный глобус с материками",
+        "Разрез кабеля и оптические каналы",
+        "Счётчик пакетов без вымышленных измерений",
+        "Два независимых маршрута",
+        "Схема повреждения и переключения"
+      ],
+      "voice_plan": "Сначала аудиопревью Yandex SpeechKit / ermil; спокойная любознательная подача, естественные паузы. При наличии ключа и подтверждённого русского voice ID сравнить ElevenLabs Multilingual v2. Готовый звук прослушать человеком; -16 LUFS, потолок -1.5 dBTP. Без музыки.",
+      "edit_plan": "Из глобуса нырнуть к линии; увеличить волокно; показать параллельные каналы; заменить один маршрут резервным; завершить общей картой. Новый элемент каждые 1–3 секунды, переходы 0.15–0.25 секунды. Цвета длин волн условные, масштабы условные; не рисовать один кабель как весь интернет.",
+      "music": {
+        "use": false,
+        "license": null
+      },
+      "rights": "Оригинальная локальная векторная анимация; источники используются как фактическая опора, без копирования чужих фото и видео.",
+      "timing_notice": "Это монтажные ориентиры. После аудиопревью измерить реальную речь, сдвинуть сцены; не ускорять голос ради заданного числа секунд.",
+      "variants": {
+        "28": {
+          "spoken_word_count": 55,
+          "scenes": [
+            {
+              "scene": 1,
+              "narration": "Почему интернет между материками идёт по дну океана?",
+              "caption": "ПОЧЕМУ ПОД ОКЕАНОМ?",
+              "image_prompt": "Portrait 9:16 original clean vector diagram, navy ocean, cyan routes, amber signal, clear object layers, no lettering, no logos, no watermark. Globe with two continents, camera descending from orbit into the sea.",
+              "motion_kind": "globe_dive",
+              "start_hint": 0,
+              "end_hint": 4.07,
+              "fact_ids": [
+                "cable-share"
+              ],
+              "beats": [
+                "Глобус → маршрут между материками",
+                "Камера следует вниз к морю"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "globe_dive"
+            },
+            {
+              "scene": 2,
+              "narration": "В кабеле — оптоволокно. Свет разных длин волн несёт данные одновременно.",
+              "caption": "ВНУТРИ — ОПТОВОЛОКНО",
+              "image_prompt": "Portrait 9:16 original clean vector diagram, navy ocean, cyan routes, amber signal, clear object layers, no lettering, no logos, no watermark. Cutaway fiber cable with several parallel false-color optical channels inside.",
+              "motion_kind": "fiber_pulse",
+              "start_hint": 4.07,
+              "end_hint": 9.67,
+              "fact_ids": [
+                "fiber-parallel"
+              ],
+              "beats": [
+                "Разрез кабеля",
+                "Появляются параллельные каналы",
+                "Импульсы двигаются внутри"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "fiber_pulse"
+            },
+            {
+              "scene": 3,
+              "narration": "Такая линия передаёт огромные потоки данных с небольшой задержкой.",
+              "caption": "МНОГО ДАННЫХ, МАЛАЯ ЗАДЕРЖКА",
+              "image_prompt": "Portrait 9:16 original clean vector diagram, navy ocean, cyan routes, amber signal, clear object layers, no lettering, no logos, no watermark. Packets flowing on a route between two original simplified land masses.",
+              "motion_kind": "network_flow",
+              "start_hint": 9.67,
+              "end_hint": 14.25,
+              "fact_ids": [
+                "fiber-capacity"
+              ],
+              "beats": [
+                "Пакеты входят вместе",
+                "Другой конец принимает потоки"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "network_flow"
+            },
+            {
+              "scene": 4,
+              "narration": "А если кабель повреждён? Трафик могут направить по резервным линиям.",
+              "caption": "ЕСТЬ РЕЗЕРВНЫЙ ПУТЬ",
+              "image_prompt": "Portrait 9:16 original clean vector diagram, navy ocean, cyan routes, amber signal, clear object layers, no lettering, no logos, no watermark. Two cable paths, one schematic break and packet flow taking the alternate path.",
+              "motion_kind": "cable_reroute",
+              "start_hint": 14.25,
+              "end_hint": 19.34,
+              "fact_ids": [
+                "cable-backup"
+              ],
+              "beats": [
+                "Условное повреждение",
+                "Пакеты переходят на вторую линию"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "cable_reroute"
+            },
+            {
+              "scene": 5,
+              "narration": "Но если таких путей мало, связь может серьёзно пострадать.",
+              "caption": "БЕЗ РЕЗЕРВА СВЯЗЬ ХУЖЕ",
+              "image_prompt": "Portrait 9:16 original clean vector diagram, navy ocean, cyan routes, amber signal, clear object layers, no lettering, no logos, no watermark. Comparison of a network with alternate routes and a sparse single route, not real countries.",
+              "motion_kind": "route_compare",
+              "start_hint": 19.34,
+              "end_hint": 23.92,
+              "fact_ids": [
+                "cable-backup"
+              ],
+              "beats": [
+                "Появляется сеть без запасного пути",
+                "Поток в ней замедляется"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "route_compare"
+            },
+            {
+              "scene": 6,
+              "narration": "Поэтому беспроводной мир зависит от проводов под водой.",
+              "caption": "БЕСПРОВОДНОЙ МИР НУЖДАЕТСЯ В ПРОВОДАХ",
+              "image_prompt": "Portrait 9:16 original clean vector diagram, navy ocean, cyan routes, amber signal, clear object layers, no lettering, no logos, no watermark. Camera rises from the sea to a schematic globe showing cables connected to local wireless towers.",
+              "motion_kind": "globe_reveal",
+              "start_hint": 23.92,
+              "end_hint": 28,
+              "fact_ids": [
+                "cable-share"
+              ],
+              "beats": [
+                "Камера поднимается",
+                "На берегу появляется беспроводной участок"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "globe_reveal"
+            }
+          ],
+          "estimated_speech_words_per_second": 1.96
+        },
+        "20": {
+          "spoken_word_count": 37,
+          "scenes": [
+            {
+              "scene": 1,
+              "narration": "Почему интернет между материками идёт по дну океана?",
+              "caption": "ПОЧЕМУ ПОД ОКЕАНОМ?",
+              "image_prompt": "Portrait 9:16 original clean vector diagram, navy ocean, cyan routes, amber signal, clear object layers, no lettering, no logos, no watermark. Globe with two continents, camera descending from orbit into the sea.",
+              "motion_kind": "globe_dive",
+              "start_hint": 0,
+              "end_hint": 4.32,
+              "fact_ids": [
+                "cable-share"
+              ],
+              "beats": [
+                "Глобус → маршрут между материками",
+                "Камера следует вниз к морю"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "globe_dive"
+            },
+            {
+              "scene": 2,
+              "narration": "Оптоволокно несёт данные светом сразу по нескольким каналам.",
+              "caption": "ВНУТРИ — ОПТОВОЛОКНО",
+              "image_prompt": "Portrait 9:16 original clean vector diagram, navy ocean, cyan routes, amber signal, clear object layers, no lettering, no logos, no watermark. Cutaway fiber cable with several parallel false-color optical channels inside.",
+              "motion_kind": "fiber_pulse",
+              "start_hint": 4.32,
+              "end_hint": 8.64,
+              "fact_ids": [
+                "fiber-parallel"
+              ],
+              "beats": [
+                "Разрез кабеля",
+                "Появляются параллельные каналы",
+                "Импульсы двигаются внутри"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "fiber_pulse"
+            },
+            {
+              "scene": 3,
+              "narration": "Это огромная ёмкость и малая задержка.",
+              "caption": "МНОГО ДАННЫХ, МАЛАЯ ЗАДЕРЖКА",
+              "image_prompt": "Portrait 9:16 original clean vector diagram, navy ocean, cyan routes, amber signal, clear object layers, no lettering, no logos, no watermark. Packets flowing on a route between two original simplified land masses.",
+              "motion_kind": "network_flow",
+              "start_hint": 8.64,
+              "end_hint": 11.88,
+              "fact_ids": [
+                "fiber-capacity"
+              ],
+              "beats": [
+                "Пакеты входят вместе",
+                "Другой конец принимает потоки"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "network_flow"
+            },
+            {
+              "scene": 4,
+              "narration": "При повреждении помогают резервные маршруты.",
+              "caption": "ЕСТЬ РЕЗЕРВНЫЙ ПУТЬ",
+              "image_prompt": "Portrait 9:16 original clean vector diagram, navy ocean, cyan routes, amber signal, clear object layers, no lettering, no logos, no watermark. Two cable paths, one schematic break and packet flow taking the alternate path.",
+              "motion_kind": "cable_reroute",
+              "start_hint": 11.88,
+              "end_hint": 14.58,
+              "fact_ids": [
+                "cable-backup"
+              ],
+              "beats": [
+                "Условное повреждение",
+                "Пакеты переходят на вторую линию"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "cable_reroute"
+            },
+            {
+              "scene": 5,
+              "narration": "Если резерва мало, связь страдает.",
+              "caption": "БЕЗ РЕЗЕРВА СВЯЗЬ ХУЖЕ",
+              "image_prompt": "Portrait 9:16 original clean vector diagram, navy ocean, cyan routes, amber signal, clear object layers, no lettering, no logos, no watermark. Comparison of a network with alternate routes and a sparse single route, not real countries.",
+              "motion_kind": "route_compare",
+              "start_hint": 14.58,
+              "end_hint": 17.28,
+              "fact_ids": [
+                "cable-backup"
+              ],
+              "beats": [
+                "Появляется сеть без запасного пути",
+                "Поток в ней замедляется"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "route_compare"
+            },
+            {
+              "scene": 6,
+              "narration": "Беспроводной мир зависит от проводов.",
+              "caption": "БЕСПРОВОДНОЙ МИР НУЖДАЕТСЯ В ПРОВОДАХ",
+              "image_prompt": "Portrait 9:16 original clean vector diagram, navy ocean, cyan routes, amber signal, clear object layers, no lettering, no logos, no watermark. Camera rises from the sea to a schematic globe showing cables connected to local wireless towers.",
+              "motion_kind": "globe_reveal",
+              "start_hint": 17.28,
+              "end_hint": 20,
+              "fact_ids": [
+                "cable-share"
+              ],
+              "beats": [
+                "Камера поднимается",
+                "На берегу появляется беспроводной участок"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "globe_reveal"
+            }
+          ],
+          "estimated_speech_words_per_second": 1.85
+        },
+        "40": {
+          "spoken_word_count": 85,
+          "scenes": [
+            {
+              "scene": 1,
+              "narration": "Почему интернет между материками идёт по дну океана? Основная часть этого трафика проходит по кабелям.",
+              "caption": "ПОЧЕМУ ПОД ОКЕАНОМ?",
+              "image_prompt": "Portrait 9:16 original clean vector diagram, navy ocean, cyan routes, amber signal, clear object layers, no lettering, no logos, no watermark. Globe with two continents, camera descending from orbit into the sea.",
+              "motion_kind": "globe_dive",
+              "start_hint": 0,
+              "end_hint": 7.06,
+              "fact_ids": [
+                "cable-share"
+              ],
+              "beats": [
+                "Глобус → маршрут между материками",
+                "Камера следует вниз к морю"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "globe_dive"
+            },
+            {
+              "scene": 2,
+              "narration": "Внутри — оптоволокно. Свет разных длин волн передаёт данные одновременно, по параллельным каналам.",
+              "caption": "ВНУТРИ — ОПТОВОЛОКНО",
+              "image_prompt": "Portrait 9:16 original clean vector diagram, navy ocean, cyan routes, amber signal, clear object layers, no lettering, no logos, no watermark. Cutaway fiber cable with several parallel false-color optical channels inside.",
+              "motion_kind": "fiber_pulse",
+              "start_hint": 7.06,
+              "end_hint": 13.18,
+              "fact_ids": [
+                "fiber-parallel"
+              ],
+              "beats": [
+                "Разрез кабеля",
+                "Появляются параллельные каналы",
+                "Импульсы двигаются внутри"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "fiber_pulse"
+            },
+            {
+              "scene": 3,
+              "narration": "Так получают огромную пропускную способность и небольшую задержку. Спутники тоже нужны: например, для удалённых мест.",
+              "caption": "МНОГО ДАННЫХ, МАЛАЯ ЗАДЕРЖКА",
+              "image_prompt": "Portrait 9:16 original clean vector diagram, navy ocean, cyan routes, amber signal, clear object layers, no lettering, no logos, no watermark. Packets flowing on a route between two original simplified land masses.",
+              "motion_kind": "network_flow",
+              "start_hint": 13.18,
+              "end_hint": 20.24,
+              "fact_ids": [
+                "fiber-capacity",
+                "cable-satellites"
+              ],
+              "beats": [
+                "Пакеты входят вместе",
+                "Другой конец принимает потоки"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "network_flow"
+            },
+            {
+              "scene": 4,
+              "narration": "А если кабель повреждён? При наличии резервной ёмкости трафик могут перенаправить по другому маршруту.",
+              "caption": "ЕСТЬ РЕЗЕРВНЫЙ ПУТЬ",
+              "image_prompt": "Portrait 9:16 original clean vector diagram, navy ocean, cyan routes, amber signal, clear object layers, no lettering, no logos, no watermark. Two cable paths, one schematic break and packet flow taking the alternate path.",
+              "motion_kind": "cable_reroute",
+              "start_hint": 20.24,
+              "end_hint": 26.83,
+              "fact_ids": [
+                "cable-backup"
+              ],
+              "beats": [
+                "Условное повреждение",
+                "Пакеты переходят на вторую линию"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "cable_reroute"
+            },
+            {
+              "scene": 5,
+              "narration": "Но если независимых путей мало, связь может серьёзно пострадать. Сам кабель не гарантирует надёжности.",
+              "caption": "БЕЗ РЕЗЕРВА СВЯЗЬ ХУЖЕ",
+              "image_prompt": "Portrait 9:16 original clean vector diagram, navy ocean, cyan routes, amber signal, clear object layers, no lettering, no logos, no watermark. Comparison of a network with alternate routes and a sparse single route, not real countries.",
+              "motion_kind": "route_compare",
+              "start_hint": 26.83,
+              "end_hint": 33.42,
+              "fact_ids": [
+                "cable-backup"
+              ],
+              "beats": [
+                "Появляется сеть без запасного пути",
+                "Поток в ней замедляется"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "route_compare"
+            },
+            {
+              "scene": 6,
+              "narration": "Её поддерживает сеть запасных путей. Поэтому наш беспроводной мир зависит от проводов под водой.",
+              "caption": "БЕСПРОВОДНОЙ МИР НУЖДАЕТСЯ В ПРОВОДАХ",
+              "image_prompt": "Portrait 9:16 original clean vector diagram, navy ocean, cyan routes, amber signal, clear object layers, no lettering, no logos, no watermark. Camera rises from the sea to a schematic globe showing cables connected to local wireless towers.",
+              "motion_kind": "globe_reveal",
+              "start_hint": 33.42,
+              "end_hint": 40,
+              "fact_ids": [
+                "cable-share"
+              ],
+              "beats": [
+                "Камера поднимается",
+                "На берегу появляется беспроводной участок"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "globe_reveal"
+            }
+          ],
+          "estimated_speech_words_per_second": 2.12
+        }
+      },
+      "motion_supported": true,
+      "motion_status": "implemented_cable_scene_sequence",
+      "source_urls": [
+        "https://digital-strategy.ec.europa.eu/en/news/commission-increases-submarine-cable-security-eu347-million-investment-and-new-toolbox",
+        "https://www.itu.int/en/mediacentre/Pages/PR-2026-07-10-Submarine-cable-resilience-report.aspx",
+        "https://www.itu.int/epublications/publication/itu-t-g-suppl-41-2024-07-design-guidelines-for-optical-fibre-submarine-cable-systems",
+        "https://www.nokia.com/optical-networks/subsea-network-solutions/",
+        "https://www.internetsociety.org/resources/policybriefs/2025/enhancing-the-resilience-of-submarine-internet-infrastructure/"
+      ]
+    },
+    "cold-phone": {
+      "title": "Почему телефон выключается на морозе?",
+      "description": "Холод может временно уменьшать доступную мощность батареи. Что происходит внутри и почему телефон иногда оживает в тепле. Схематическая анимация. Источники: Apple, NIST; проверены 26.10.2026. https://support.apple.com/en-us/118431 ; https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=911922",
+      "tags": [
+        "телефон",
+        "батарея",
+        "мороз",
+        "наука",
+        "Невидимый мир"
+      ],
+      "style": "EXPLAINER",
+      "hooks": [
+        {
+          "text": "Телефон замёрз и выключился. Заряд правда исчез?",
+          "clarity": 5,
+          "truthfulness": 5,
+          "intrigue": 4,
+          "selection_note": "Выбран: сразу ставит конкретный вопрос без преувеличения."
+        },
+        {
+          "text": "Почему на морозе батарея сдаётся раньше тебя?",
+          "clarity": 4,
+          "truthfulness": 5,
+          "intrigue": 5,
+          "selection_note": "Альтернатива для небольшого последовательного теста."
+        },
+        {
+          "text": "В тепле телефон ожил без розетки. Как это возможно?",
+          "clarity": 4,
+          "truthfulness": 5,
+          "intrigue": 4,
+          "selection_note": "Альтернатива для небольшого последовательного теста."
+        }
+      ],
+      "chosen_hook_index": 0,
+      "hook_selection": "Оцениваем ясность и правдивость прежде интриги; баллы субъективные, без имитации A/B-данных.",
+      "visual_assets": [
+        "Оригинальный силуэт телефона без бренда",
+        "Схема батареи",
+        "Движущиеся частицы и индикатор напряжения без чисел",
+        "Тёплый карман"
+      ],
+      "voice_plan": "Сначала аудиопревью Yandex SpeechKit / ermil; спокойная любознательная подача, естественные паузы. При наличии ключа и подтверждённого русского voice ID сравнить ElevenLabs Multilingual v2. Готовый звук прослушать человеком; -16 LUFS, потолок -1.5 dBTP. Без музыки.",
+      "edit_plan": "Начать с внезапно потухшего экрана, раскрыть батарею, замедлить частицы без стоп-кадра, вернуть телефон в карман. Цветовой переход из холодного синего в тёплый янтарный; без советов нагревать прибор на батарее отопления.",
+      "music": {
+        "use": false,
+        "license": null
+      },
+      "rights": "Оригинальная локальная векторная анимация; источники используются как фактическая опора, без копирования чужих фото и видео.",
+      "timing_notice": "Это монтажные ориентиры. После аудиопревью измерить реальную речь, сдвинуть сцены; не ускорять голос ради заданного числа секунд.",
+      "variants": {
+        "28": {
+          "spoken_word_count": 57,
+          "scenes": [
+            {
+              "scene": 1,
+              "narration": "Телефон замёрз и выключился. Заряд правда исчез?",
+              "caption": "ЗАРЯД ПРАВДА ИСЧЕЗ?",
+              "image_prompt": "Portrait 9:16 original vector explainer, anonymous phone, clean navy cyan amber palette, no lettering, no brands, no watermark. A phone in a gloved hand, screen turning dark in winter.",
+              "motion_kind": "power",
+              "start_hint": 0,
+              "end_hint": 3.44,
+              "fact_ids": [
+                "cold-device"
+              ],
+              "beats": [
+                "Появляется морозный воздух",
+                "Экран гаснет"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "phone_cold"
+            },
+            {
+              "scene": 2,
+              "narration": "На холоде химические процессы в батарее замедляются, а внутреннее сопротивление растёт.",
+              "caption": "ХОЛОД ЗАМЕДЛЯЕТ ПРОЦЕССЫ",
+              "image_prompt": "Portrait 9:16 original vector explainer, anonymous phone, clean navy cyan amber palette, no lettering, no brands, no watermark. Battery cutaway with charge carriers moving slower, schematic only.",
+              "motion_kind": "power",
+              "start_hint": 3.44,
+              "end_hint": 8.84,
+              "fact_ids": [
+                "cold-chemistry"
+              ],
+              "beats": [
+                "Камера входит в батарею",
+                "Частицы движутся медленнее"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "battery_flow"
+            },
+            {
+              "scene": 3,
+              "narration": "Под нагрузкой напряжение сильнее проседает. Телефону может не хватить питания, хотя запас энергии ещё есть.",
+              "caption": "МОЩНОСТИ МОЖЕТ НЕ ХВАТИТЬ",
+              "image_prompt": "Portrait 9:16 original vector explainer, anonymous phone, clean navy cyan amber palette, no lettering, no brands, no watermark. Simple load and voltage diagram without numbers.",
+              "motion_kind": "power",
+              "start_hint": 8.84,
+              "end_hint": 16.21,
+              "fact_ids": [
+                "cold-chemistry",
+                "cold-device"
+              ],
+              "beats": [
+                "Появляется нагрузка",
+                "Условный уровень снижается"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "voltage_drop"
+            },
+            {
+              "scene": 4,
+              "narration": "После постепенного согревания работа может восстановиться. Поэтому заряд иногда будто возвращается без розетки.",
+              "caption": "В ТЕПЛЕ РАБОТА МОЖЕТ ВЕРНУТЬСЯ",
+              "image_prompt": "Portrait 9:16 original vector explainer, anonymous phone, clean navy cyan amber palette, no lettering, no brands, no watermark. The phone in an inner coat pocket gradually warming and lighting up.",
+              "motion_kind": "power",
+              "start_hint": 16.21,
+              "end_hint": 22.6,
+              "fact_ids": [
+                "cold-device"
+              ],
+              "beats": [
+                "Телефон перемещается в карман",
+                "Постепенно возвращается свет"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "phone_warm"
+            },
+            {
+              "scene": 5,
+              "narration": "Но это не обещание для любой батареи: её состояние тоже важно.",
+              "caption": "ЭТО НЕ ВСЕГДА ПОТЕРЯ ЗАРЯДА",
+              "image_prompt": "Portrait 9:16 original vector explainer, anonymous phone, clean navy cyan amber palette, no lettering, no brands, no watermark. Battery and phone shown together, end on warm stable screen.",
+              "motion_kind": "power",
+              "start_hint": 22.6,
+              "end_hint": 28,
+              "fact_ids": [
+                "cold-device"
+              ],
+              "beats": [
+                "Возврат к целому телефону",
+                "Финальный устойчивый кадр"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "phone_reveal"
+            }
+          ],
+          "estimated_speech_words_per_second": 2.04
+        },
+        "20": {
+          "spoken_word_count": 44,
+          "scenes": [
+            {
+              "scene": 1,
+              "narration": "Телефон замёрз и выключился. Заряд правда исчез?",
+              "caption": "ЗАРЯД ПРАВДА ИСЧЕЗ?",
+              "image_prompt": "Portrait 9:16 original vector explainer, anonymous phone, clean navy cyan amber palette, no lettering, no brands, no watermark. A phone in a gloved hand, screen turning dark in winter.",
+              "motion_kind": "power",
+              "start_hint": 0,
+              "end_hint": 3.18,
+              "fact_ids": [
+                "cold-device"
+              ],
+              "beats": [
+                "Появляется морозный воздух",
+                "Экран гаснет"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "phone_cold"
+            },
+            {
+              "scene": 2,
+              "narration": "Холод замедляет процессы в батарее и повышает её сопротивление.",
+              "caption": "ХОЛОД ЗАМЕДЛЯЕТ ПРОЦЕССЫ",
+              "image_prompt": "Portrait 9:16 original vector explainer, anonymous phone, clean navy cyan amber palette, no lettering, no brands, no watermark. Battery cutaway with charge carriers moving slower, schematic only.",
+              "motion_kind": "power",
+              "start_hint": 3.18,
+              "end_hint": 7.27,
+              "fact_ids": [
+                "cold-chemistry"
+              ],
+              "beats": [
+                "Камера входит в батарею",
+                "Частицы движутся медленнее"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "battery_flow"
+            },
+            {
+              "scene": 3,
+              "narration": "Под нагрузкой напряжение падает, и питание может отключиться.",
+              "caption": "МОЩНОСТИ МОЖЕТ НЕ ХВАТИТЬ",
+              "image_prompt": "Portrait 9:16 original vector explainer, anonymous phone, clean navy cyan amber palette, no lettering, no brands, no watermark. Simple load and voltage diagram without numbers.",
+              "motion_kind": "power",
+              "start_hint": 7.27,
+              "end_hint": 10.91,
+              "fact_ids": [
+                "cold-chemistry",
+                "cold-device"
+              ],
+              "beats": [
+                "Появляется нагрузка",
+                "Условный уровень снижается"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "voltage_drop"
+            },
+            {
+              "scene": 4,
+              "narration": "В тепле работа иногда восстанавливается без розетки.",
+              "caption": "В ТЕПЛЕ РАБОТА МОЖЕТ ВЕРНУТЬСЯ",
+              "image_prompt": "Portrait 9:16 original vector explainer, anonymous phone, clean navy cyan amber palette, no lettering, no brands, no watermark. The phone in an inner coat pocket gradually warming and lighting up.",
+              "motion_kind": "power",
+              "start_hint": 10.91,
+              "end_hint": 14.09,
+              "fact_ids": [
+                "cold-device"
+              ],
+              "beats": [
+                "Телефон перемещается в карман",
+                "Постепенно возвращается свет"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "phone_warm"
+            },
+            {
+              "scene": 5,
+              "narration": "Так бывает при временном падении доступной мощности, а не обязательно исчезновении всей энергии.",
+              "caption": "ЭТО НЕ ВСЕГДА ПОТЕРЯ ЗАРЯДА",
+              "image_prompt": "Portrait 9:16 original vector explainer, anonymous phone, clean navy cyan amber palette, no lettering, no brands, no watermark. Battery and phone shown together, end on warm stable screen.",
+              "motion_kind": "power",
+              "start_hint": 14.09,
+              "end_hint": 20,
+              "fact_ids": [
+                "cold-device"
+              ],
+              "beats": [
+                "Возврат к целому телефону",
+                "Финальный устойчивый кадр"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "phone_reveal"
+            }
+          ],
+          "estimated_speech_words_per_second": 2.2
+        },
+        "40": {
+          "spoken_word_count": 83,
+          "scenes": [
+            {
+              "scene": 1,
+              "narration": "Телефон замёрз и выключился. Заряд правда исчез? Иногда он оживает уже в тёплом кармане.",
+              "caption": "ЗАРЯД ПРАВДА ИСЧЕЗ?",
+              "image_prompt": "Portrait 9:16 original vector explainer, anonymous phone, clean navy cyan amber palette, no lettering, no brands, no watermark. A phone in a gloved hand, screen turning dark in winter.",
+              "motion_kind": "power",
+              "start_hint": 0,
+              "end_hint": 6.75,
+              "fact_ids": [
+                "cold-device"
+              ],
+              "beats": [
+                "Появляется морозный воздух",
+                "Экран гаснет"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "phone_cold"
+            },
+            {
+              "scene": 2,
+              "narration": "Батарея работает благодаря переносу заряда и химическим реакциям. Холод затрудняет эти процессы, а внутреннее сопротивление растёт.",
+              "caption": "ХОЛОД ЗАМЕДЛЯЕТ ПРОЦЕССЫ",
+              "image_prompt": "Portrait 9:16 original vector explainer, anonymous phone, clean navy cyan amber palette, no lettering, no brands, no watermark. Battery cutaway with charge carriers moving slower, schematic only.",
+              "motion_kind": "power",
+              "start_hint": 6.75,
+              "end_hint": 14.46,
+              "fact_ids": [
+                "cold-chemistry"
+              ],
+              "beats": [
+                "Камера входит в батарею",
+                "Частицы движутся медленнее"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "battery_flow"
+            },
+            {
+              "scene": 3,
+              "narration": "Когда телефон требует ток, напряжение сильнее проседает. Устройство может выключиться, хотя внутри ещё остаётся энергия.",
+              "caption": "МОЩНОСТИ МОЖЕТ НЕ ХВАТИТЬ",
+              "image_prompt": "Portrait 9:16 original vector explainer, anonymous phone, clean navy cyan amber palette, no lettering, no brands, no watermark. Simple load and voltage diagram without numbers.",
+              "motion_kind": "power",
+              "start_hint": 14.46,
+              "end_hint": 21.69,
+              "fact_ids": [
+                "cold-chemistry",
+                "cold-device"
+              ],
+              "beats": [
+                "Появляется нагрузка",
+                "Условный уровень снижается"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "voltage_drop"
+            },
+            {
+              "scene": 4,
+              "narration": "После постепенного согревания нормальная работа может восстановиться. Поэтому показания заряда иногда словно отматываются назад без подключения к розетке.",
+              "caption": "В ТЕПЛЕ РАБОТА МОЖЕТ ВЕРНУТЬСЯ",
+              "image_prompt": "Portrait 9:16 original vector explainer, anonymous phone, clean navy cyan amber palette, no lettering, no brands, no watermark. The phone in an inner coat pocket gradually warming and lighting up.",
+              "motion_kind": "power",
+              "start_hint": 21.69,
+              "end_hint": 30.36,
+              "fact_ids": [
+                "cold-device"
+              ],
+              "beats": [
+                "Телефон перемещается в карман",
+                "Постепенно возвращается свет"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "phone_warm"
+            },
+            {
+              "scene": 5,
+              "narration": "Но холод не делает батарею вечной: результат зависит от устройства и состояния аккумулятора. Временный эффект и неисправность — разные вещи.",
+              "caption": "ЭТО НЕ ВСЕГДА ПОТЕРЯ ЗАРЯДА",
+              "image_prompt": "Portrait 9:16 original vector explainer, anonymous phone, clean navy cyan amber palette, no lettering, no brands, no watermark. Battery and phone shown together, end on warm stable screen.",
+              "motion_kind": "power",
+              "start_hint": 30.36,
+              "end_hint": 40,
+              "fact_ids": [
+                "cold-device"
+              ],
+              "beats": [
+                "Возврат к целому телефону",
+                "Финальный устойчивый кадр"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "phone_reveal"
+            }
+          ],
+          "estimated_speech_words_per_second": 2.08
+        }
+      },
+      "motion_supported": false,
+      "motion_status": "family_motion_preview_needs_scene_specific_visual_QA",
+      "source_urls": [
+        "https://support.apple.com/en-us/118431",
+        "https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=911922",
+        "https://cmp.ucsd.edu/publication/s41560-021-00783-z/055.s41560-021-00783-z.pdf"
+      ]
+    },
+    "both-engines": {
+      "title": "Почему самолёт продолжает лететь без тяги?",
+      "description": "При потере тяги крылья не исчезают: самолёт может планировать и расходовать высоту. Исход зависит от условий. Общая физика, без инструкций пилотирования. Источник: FAA; проверен 26.10.2026. https://www.faa.gov/lessonslearned/transportairplane/accidents/N160US",
+      "tags": [
+        "самолёт",
+        "планирование",
+        "аэродинамика",
+        "Невидимый мир"
+      ],
+      "style": "EXPLAINER",
+      "hooks": [
+        {
+          "text": "Оба двигателя замолчали. Почему самолёт ещё летит?",
+          "clarity": 5,
+          "truthfulness": 5,
+          "intrigue": 4,
+          "selection_note": "Выбран: сразу ставит конкретный вопрос без преувеличения."
+        },
+        {
+          "text": "Самолёт без тяги — это падение или планирование?",
+          "clarity": 4,
+          "truthfulness": 5,
+          "intrigue": 5,
+          "selection_note": "Альтернатива для небольшого последовательного теста."
+        },
+        {
+          "text": "Двигатели выключились, а крылья продолжают работать. Как?",
+          "clarity": 4,
+          "truthfulness": 5,
+          "intrigue": 4,
+          "selection_note": "Альтернатива для небольшого последовательного теста."
+        }
+      ],
+      "chosen_hook_index": 0,
+      "hook_selection": "Оцениваем ясность и правдивость прежде интриги; баллы субъективные, без имитации A/B-данных.",
+      "visual_assets": [
+        "Безымянный двухдвигательный лайнер",
+        "Стрелки движения воздуха и подъёмной силы",
+        "Условная траектория снижения без карты реального рейса"
+      ],
+      "voice_plan": "Сначала аудиопревью Yandex SpeechKit / ermil; спокойная любознательная подача, естественные паузы. При наличии ключа и подтверждённого русского voice ID сравнить ElevenLabs Multilingual v2. Готовый звук прослушать человеком; -16 LUFS, потолок -1.5 dBTP. Без музыки.",
+      "edit_plan": "Звук двигателя не синтезировать; отсутствие тяги показать визуально. Один непрерывный полёт с наращиванием схемы, а не катастрофа. Силуэт движется и снижается. Не обещать посадку и не показывать эксплуатационных чисел.",
+      "music": {
+        "use": false,
+        "license": null
+      },
+      "rights": "Оригинальная локальная векторная анимация; источники используются как фактическая опора, без копирования чужих фото и видео.",
+      "timing_notice": "Это монтажные ориентиры. После аудиопревью измерить реальную речь, сдвинуть сцены; не ускорять голос ради заданного числа секунд.",
+      "variants": {
+        "28": {
+          "spoken_word_count": 58,
+          "scenes": [
+            {
+              "scene": 1,
+              "narration": "Оба двигателя замолчали. Почему самолёт ещё летит?",
+              "caption": "БЕЗ ТЯГИ — ЕЩЁ В ПОЛЁТЕ",
+              "image_prompt": "Portrait 9:16 original educational vector animation, anonymous passenger jet, clear blue sky, no logos, no lettering, no crash scene. Jet moving forward while engine thrust arrows fade.",
+              "motion_kind": "airflow",
+              "start_hint": 0,
+              "end_hint": 3.38,
+              "fact_ids": [
+                "glide-no-thrust"
+              ],
+              "beats": [
+                "Исчезают стрелки тяги",
+                "Самолёт продолжает движение"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "plane_glide"
+            },
+            {
+              "scene": 2,
+              "narration": "Двигатели дают тягу, а подъёмную силу создают крылья, пока их обтекает воздух.",
+              "caption": "КРЫЛЬЯ ПРОДОЛЖАЮТ РАБОТАТЬ",
+              "image_prompt": "Portrait 9:16 original educational vector animation, anonymous passenger jet, clear blue sky, no logos, no lettering, no crash scene. Airflow around moving wing, simple lift and weight arrows.",
+              "motion_kind": "airflow",
+              "start_hint": 3.38,
+              "end_hint": 9.17,
+              "fact_ids": [
+                "glide-no-thrust"
+              ],
+              "beats": [
+                "Воздух обтекает крыло",
+                "Добавляются силы"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "wing_airflow"
+            },
+            {
+              "scene": 3,
+              "narration": "Без тяги самолёт может планировать: постепенно терять высоту и продолжать движение вперёд.",
+              "caption": "ВЫСОТА ПРЕВРАЩАЕТСЯ В ДВИЖЕНИЕ",
+              "image_prompt": "Portrait 9:16 original educational vector animation, anonymous passenger jet, clear blue sky, no logos, no lettering, no crash scene. Jet following a descending arc, height bar decreasing without numbers.",
+              "motion_kind": "airflow",
+              "start_hint": 9.17,
+              "end_hint": 14.96,
+              "fact_ids": [
+                "glide-no-thrust"
+              ],
+              "beats": [
+                "Траектория идёт вниз",
+                "Высота постепенно уменьшается"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "altitude_trade"
+            },
+            {
+              "scene": 4,
+              "narration": "Сколько он пролетит, зависит от высоты, скорости, ветра и конфигурации.",
+              "caption": "РЕЗУЛЬТАТ ЗАВИСИТ ОТ УСЛОВИЙ",
+              "image_prompt": "Portrait 9:16 original educational vector animation, anonymous passenger jet, clear blue sky, no logos, no lettering, no crash scene. Wind, altitude, airspeed represented by neutral icons surrounding the jet.",
+              "motion_kind": "airflow",
+              "start_hint": 14.96,
+              "end_hint": 19.79,
+              "fact_ids": [
+                "glide-no-thrust"
+              ],
+              "beats": [
+                "Появляется ветер",
+                "Меняются условные условия"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "flight_factors"
+            },
+            {
+              "scene": 5,
+              "narration": "Это даёт экипажу варианты действий, но не гарантирует благополучную посадку. Крылья работают, даже когда тяги больше нет.",
+              "caption": "ПЛАНИРОВАНИЕ НЕ ГАРАНТИРУЕТ ПОСАДКУ",
+              "image_prompt": "Portrait 9:16 original educational vector animation, anonymous passenger jet, clear blue sky, no logos, no lettering, no crash scene. Wide calm diagram of a descending flight path and available terrain.",
+              "motion_kind": "airflow",
+              "start_hint": 19.79,
+              "end_hint": 28,
+              "fact_ids": [
+                "glide-no-thrust"
+              ],
+              "beats": [
+                "Общий вид траектории",
+                "Удержать законченный вывод"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "plane_reveal"
+            }
+          ],
+          "estimated_speech_words_per_second": 2.07
+        },
+        "20": {
+          "spoken_word_count": 40,
+          "scenes": [
+            {
+              "scene": 1,
+              "narration": "Оба двигателя замолчали. Почему самолёт ещё летит?",
+              "caption": "БЕЗ ТЯГИ — ЕЩЁ В ПОЛЁТЕ",
+              "image_prompt": "Portrait 9:16 original educational vector animation, anonymous passenger jet, clear blue sky, no logos, no lettering, no crash scene. Jet moving forward while engine thrust arrows fade.",
+              "motion_kind": "airflow",
+              "start_hint": 0,
+              "end_hint": 3.5,
+              "fact_ids": [
+                "glide-no-thrust"
+              ],
+              "beats": [
+                "Исчезают стрелки тяги",
+                "Самолёт продолжает движение"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "plane_glide"
+            },
+            {
+              "scene": 2,
+              "narration": "Пока крылья обтекает воздух, они создают подъёмную силу.",
+              "caption": "КРЫЛЬЯ ПРОДОЛЖАЮТ РАБОТАТЬ",
+              "image_prompt": "Portrait 9:16 original educational vector animation, anonymous passenger jet, clear blue sky, no logos, no lettering, no crash scene. Airflow around moving wing, simple lift and weight arrows.",
+              "motion_kind": "airflow",
+              "start_hint": 3.5,
+              "end_hint": 7.5,
+              "fact_ids": [
+                "glide-no-thrust"
+              ],
+              "beats": [
+                "Воздух обтекает крыло",
+                "Добавляются силы"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "wing_airflow"
+            },
+            {
+              "scene": 3,
+              "narration": "Без тяги самолёт может планировать, расходуя высоту.",
+              "caption": "ВЫСОТА ПРЕВРАЩАЕТСЯ В ДВИЖЕНИЕ",
+              "image_prompt": "Portrait 9:16 original educational vector animation, anonymous passenger jet, clear blue sky, no logos, no lettering, no crash scene. Jet following a descending arc, height bar decreasing without numbers.",
+              "motion_kind": "airflow",
+              "start_hint": 7.5,
+              "end_hint": 11.0,
+              "fact_ids": [
+                "glide-no-thrust"
+              ],
+              "beats": [
+                "Траектория идёт вниз",
+                "Высота постепенно уменьшается"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "altitude_trade"
+            },
+            {
+              "scene": 4,
+              "narration": "Дальность зависит от высоты, ветра, скорости и конфигурации.",
+              "caption": "РЕЗУЛЬТАТ ЗАВИСИТ ОТ УСЛОВИЙ",
+              "image_prompt": "Portrait 9:16 original educational vector animation, anonymous passenger jet, clear blue sky, no logos, no lettering, no crash scene. Wind, altitude, airspeed represented by neutral icons surrounding the jet.",
+              "motion_kind": "airflow",
+              "start_hint": 11.0,
+              "end_hint": 15.0,
+              "fact_ids": [
+                "glide-no-thrust"
+              ],
+              "beats": [
+                "Появляется ветер",
+                "Меняются условные условия"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "flight_factors"
+            },
+            {
+              "scene": 5,
+              "narration": "Планирование даёт время и варианты, но безопасная посадка не гарантирована.",
+              "caption": "ПЛАНИРОВАНИЕ НЕ ГАРАНТИРУЕТ ПОСАДКУ",
+              "image_prompt": "Portrait 9:16 original educational vector animation, anonymous passenger jet, clear blue sky, no logos, no lettering, no crash scene. Wide calm diagram of a descending flight path and available terrain.",
+              "motion_kind": "airflow",
+              "start_hint": 15.0,
+              "end_hint": 20,
+              "fact_ids": [
+                "glide-no-thrust"
+              ],
+              "beats": [
+                "Общий вид траектории",
+                "Удержать законченный вывод"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "plane_reveal"
+            }
+          ],
+          "estimated_speech_words_per_second": 2.0
+        },
+        "40": {
+          "spoken_word_count": 88,
+          "scenes": [
+            {
+              "scene": 1,
+              "narration": "Оба двигателя замолчали. Почему самолёт ещё летит? Крылья ведь остались на месте.",
+              "caption": "БЕЗ ТЯГИ — ЕЩЁ В ПОЛЁТЕ",
+              "image_prompt": "Portrait 9:16 original educational vector animation, anonymous passenger jet, clear blue sky, no logos, no lettering, no crash scene. Jet moving forward while engine thrust arrows fade.",
+              "motion_kind": "airflow",
+              "start_hint": 0,
+              "end_hint": 5.45,
+              "fact_ids": [
+                "glide-no-thrust"
+              ],
+              "beats": [
+                "Исчезают стрелки тяги",
+                "Самолёт продолжает движение"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "plane_glide"
+            },
+            {
+              "scene": 2,
+              "narration": "Двигатели создают тягу, а движущийся воздух вокруг крыла помогает создать подъёмную силу. Потеря тяги не выключает аэродинамику.",
+              "caption": "КРЫЛЬЯ ПРОДОЛЖАЮТ РАБОТАТЬ",
+              "image_prompt": "Portrait 9:16 original educational vector animation, anonymous passenger jet, clear blue sky, no logos, no lettering, no crash scene. Airflow around moving wing, simple lift and weight arrows.",
+              "motion_kind": "airflow",
+              "start_hint": 5.45,
+              "end_hint": 13.18,
+              "fact_ids": [
+                "glide-no-thrust"
+              ],
+              "beats": [
+                "Воздух обтекает крыло",
+                "Добавляются силы"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "wing_airflow"
+            },
+            {
+              "scene": 3,
+              "narration": "Самолёт может перейти в планирование: снижаться и двигаться вперёд, расходуя запас высоты. Он не зависает в воздухе и не летит бесконечно.",
+              "caption": "ВЫСОТА ПРЕВРАЩАЕТСЯ В ДВИЖЕНИЕ",
+              "image_prompt": "Portrait 9:16 original educational vector animation, anonymous passenger jet, clear blue sky, no logos, no lettering, no crash scene. Jet following a descending arc, height bar decreasing without numbers.",
+              "motion_kind": "airflow",
+              "start_hint": 13.18,
+              "end_hint": 22.73,
+              "fact_ids": [
+                "glide-no-thrust"
+              ],
+              "beats": [
+                "Траектория идёт вниз",
+                "Высота постепенно уменьшается"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "altitude_trade"
+            },
+            {
+              "scene": 4,
+              "narration": "Дальность зависит от исходной высоты, скорости, ветра, массы и положения механизации крыла. Для каждого самолёта условия различаются.",
+              "caption": "РЕЗУЛЬТАТ ЗАВИСИТ ОТ УСЛОВИЙ",
+              "image_prompt": "Portrait 9:16 original educational vector animation, anonymous passenger jet, clear blue sky, no logos, no lettering, no crash scene. Wind, altitude, airspeed represented by neutral icons surrounding the jet.",
+              "motion_kind": "airflow",
+              "start_hint": 22.73,
+              "end_hint": 30.46,
+              "fact_ids": [
+                "glide-no-thrust"
+              ],
+              "beats": [
+                "Появляется ветер",
+                "Меняются условные условия"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "flight_factors"
+            },
+            {
+              "scene": 5,
+              "narration": "Поэтому у экипажа могут оставаться варианты действий. Но возможность планировать — физический принцип, а не гарантия благополучной посадки после любого отказа.",
+              "caption": "ПЛАНИРОВАНИЕ НЕ ГАРАНТИРУЕТ ПОСАДКУ",
+              "image_prompt": "Portrait 9:16 original educational vector animation, anonymous passenger jet, clear blue sky, no logos, no lettering, no crash scene. Wide calm diagram of a descending flight path and available terrain.",
+              "motion_kind": "airflow",
+              "start_hint": 30.46,
+              "end_hint": 40,
+              "fact_ids": [
+                "glide-no-thrust"
+              ],
+              "beats": [
+                "Общий вид траектории",
+                "Удержать законченный вывод"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "plane_reveal"
+            }
+          ],
+          "estimated_speech_words_per_second": 2.2
+        }
+      },
+      "motion_supported": false,
+      "motion_status": "family_motion_preview_needs_scene_specific_visual_QA",
+      "source_urls": [
+        "https://www.faa.gov/lessonslearned/transportairplane/accidents/N160US"
+      ]
+    },
+    "space-sound": {
+      "title": "Почему взрыв в вакууме не слышно?",
+      "description": "Звуковой волне нужна среда. Свет и радио могут пройти вакуум, а звук внутри корабля распространяется по воздуху. Схематическая анимация. Источники: NASA и ESA; проверены 26.10.2026. https://science.nasa.gov/ems/02_anatomy/ ; https://www.esa.int/Science_Exploration/Space_Science/Space_sensations/LISTEN_UP",
+      "tags": [
+        "космос",
+        "звук",
+        "вакуум",
+        "физика",
+        "Невидимый мир"
+      ],
+      "style": "CINEMATIC",
+      "hooks": [
+        {
+          "text": "Взрыв видно. Почему через вакуум его не слышно?",
+          "clarity": 5,
+          "truthfulness": 5,
+          "intrigue": 4,
+          "selection_note": "Выбран: сразу ставит конкретный вопрос без преувеличения."
+        },
+        {
+          "text": "Почему космонавты разговаривают по радио, а не кричат?",
+          "clarity": 4,
+          "truthfulness": 5,
+          "intrigue": 5,
+          "selection_note": "Альтернатива для небольшого последовательного теста."
+        },
+        {
+          "text": "Кино озвучивает космос. Что пропущено в этой сцене?",
+          "clarity": 4,
+          "truthfulness": 5,
+          "intrigue": 4,
+          "selection_note": "Альтернатива для небольшого последовательного теста."
+        }
+      ],
+      "chosen_hook_index": 0,
+      "hook_selection": "Оцениваем ясность и правдивость прежде интриги; баллы субъективные, без имитации A/B-данных.",
+      "visual_assets": [
+        "Оригинальная стилизованная космическая вспышка",
+        "Цепочка частиц",
+        "Корабль в разрезе",
+        "Радиосигнал и приёмник"
+      ],
+      "voice_plan": "Сначала аудиопревью Yandex SpeechKit / ermil; спокойная любознательная подача, естественные паузы. При наличии ключа и подтверждённого русского voice ID сравнить ElevenLabs Multilingual v2. Готовый звук прослушать человеком; -16 LUFS, потолок -1.5 dBTP. Без музыки.",
+      "edit_plan": "Вспышку не сопровождать взрывным звуком; голос диктора — объяснение поверх схемы. Показать механику волны, убрать среду, затем провести радиоволну. В финале раскрыть воздух внутри корабля. Это локальная анимация графики, не генеративное видео.",
+      "music": {
+        "use": false,
+        "license": null
+      },
+      "rights": "Оригинальная локальная векторная анимация; источники используются как фактическая опора, без копирования чужих фото и видео.",
+      "timing_notice": "Это монтажные ориентиры. После аудиопревью измерить реальную речь, сдвинуть сцены; не ускорять голос ради заданного числа секунд.",
+      "variants": {
+        "28": {
+          "spoken_word_count": 65,
+          "scenes": [
+            {
+              "scene": 1,
+              "narration": "Взрыв видно. Почему через вакуум его не слышно?",
+              "caption": "ВИДНО, НО НЕ СЛЫШНО",
+              "image_prompt": "Portrait 9:16 original layered space illustration, deep indigo and warm light, scientifically clear schematic objects, no lettering, no logos, no watermark. Distant stylized flash in near-empty space, not an actual incident.",
+              "motion_kind": "sound",
+              "start_hint": 0,
+              "end_hint": 3.45,
+              "fact_ids": [
+                "sound-medium"
+              ],
+              "beats": [
+                "Далёкая вспышка",
+                "Свет достигает наблюдателя"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "space_flash"
+            },
+            {
+              "scene": 2,
+              "narration": "Звук — это колебания среды: например, воздуха. Частицы передают толчки соседям.",
+              "caption": "ЗВУКУ НУЖНА СРЕДА",
+              "image_prompt": "Portrait 9:16 original layered space illustration, deep indigo and warm light, scientifically clear schematic objects, no lettering, no logos, no watermark. Particles transferring a compression wave to neighboring particles.",
+              "motion_kind": "sound",
+              "start_hint": 3.45,
+              "end_hint": 8.19,
+              "fact_ids": [
+                "sound-medium"
+              ],
+              "beats": [
+                "Двигается первая частица",
+                "Колебание передаётся соседям"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "sound_wave"
+            },
+            {
+              "scene": 3,
+              "narration": "В вакууме такой цепочки нет. Звуковой волне не по чему добраться до уха.",
+              "caption": "В ВАКУУМЕ ЦЕПОЧКИ НЕТ",
+              "image_prompt": "Portrait 9:16 original layered space illustration, deep indigo and warm light, scientifically clear schematic objects, no lettering, no logos, no watermark. The particle chain ends at a vacuum gap, no sound wave crossing the gap.",
+              "motion_kind": "sound",
+              "start_hint": 8.19,
+              "end_hint": 13.79,
+              "fact_ids": [
+                "sound-medium"
+              ],
+              "beats": [
+                "Частицы исчезают из промежутка",
+                "Звуковая передача прекращается"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "vacuum_gap"
+            },
+            {
+              "scene": 4,
+              "narration": "Но свет и радиоволны проходят. Поэтому космонавты общаются по радио: приёмник снова создаёт звук.",
+              "caption": "РАДИО — ДРУГАЯ ВОЛНА",
+              "image_prompt": "Portrait 9:16 original layered space illustration, deep indigo and warm light, scientifically clear schematic objects, no lettering, no logos, no watermark. Radio electromagnetic wave reaching an astronaut receiver.",
+              "motion_kind": "sound",
+              "start_hint": 13.79,
+              "end_hint": 19.82,
+              "fact_ids": [
+                "radio-not-sound"
+              ],
+              "beats": [
+                "Радиосигнал пересекает промежуток",
+                "Приёмник создаёт звук"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "radio_signal"
+            },
+            {
+              "scene": 5,
+              "narration": "А внутри корабля можно разговаривать обычным голосом. Там есть воздух. Тишина зависит от среды, а не от слова «космос».",
+              "caption": "ВНУТРИ КОРАБЛЯ ЕСТЬ ВОЗДУХ",
+              "image_prompt": "Portrait 9:16 original layered space illustration, deep indigo and warm light, scientifically clear schematic objects, no lettering, no logos, no watermark. Cutaway spacecraft with air particles and astronauts talking.",
+              "motion_kind": "sound",
+              "start_hint": 19.82,
+              "end_hint": 28,
+              "fact_ids": [
+                "sound-medium",
+                "radio-not-sound"
+              ],
+              "beats": [
+                "Камера раскрывает кабину",
+                "Возвращается цепочка воздушных колебаний"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "space_reveal"
+            }
+          ],
+          "estimated_speech_words_per_second": 2.32
+        },
+        "20": {
+          "spoken_word_count": 40,
+          "scenes": [
+            {
+              "scene": 1,
+              "narration": "Взрыв видно. Почему через вакуум его не слышно?",
+              "caption": "ВИДНО, НО НЕ СЛЫШНО",
+              "image_prompt": "Portrait 9:16 original layered space illustration, deep indigo and warm light, scientifically clear schematic objects, no lettering, no logos, no watermark. Distant stylized flash in near-empty space, not an actual incident.",
+              "motion_kind": "sound",
+              "start_hint": 0,
+              "end_hint": 4.0,
+              "fact_ids": [
+                "sound-medium"
+              ],
+              "beats": [
+                "Далёкая вспышка",
+                "Свет достигает наблюдателя"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "space_flash"
+            },
+            {
+              "scene": 2,
+              "narration": "Звук передаётся колебаниями частиц среды.",
+              "caption": "ЗВУКУ НУЖНА СРЕДА",
+              "image_prompt": "Portrait 9:16 original layered space illustration, deep indigo and warm light, scientifically clear schematic objects, no lettering, no logos, no watermark. Particles transferring a compression wave to neighboring particles.",
+              "motion_kind": "sound",
+              "start_hint": 4.0,
+              "end_hint": 6.5,
+              "fact_ids": [
+                "sound-medium"
+              ],
+              "beats": [
+                "Двигается первая частица",
+                "Колебание передаётся соседям"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "sound_wave"
+            },
+            {
+              "scene": 3,
+              "narration": "В вакууме этой цепочки нет.",
+              "caption": "В ВАКУУМЕ ЦЕПОЧКИ НЕТ",
+              "image_prompt": "Portrait 9:16 original layered space illustration, deep indigo and warm light, scientifically clear schematic objects, no lettering, no logos, no watermark. The particle chain ends at a vacuum gap, no sound wave crossing the gap.",
+              "motion_kind": "sound",
+              "start_hint": 6.5,
+              "end_hint": 9.0,
+              "fact_ids": [
+                "sound-medium"
+              ],
+              "beats": [
+                "Частицы исчезают из промежутка",
+                "Звуковая передача прекращается"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "vacuum_gap"
+            },
+            {
+              "scene": 4,
+              "narration": "Свет и радиоволны проходят, поэтому космонавтам помогает радиосвязь.",
+              "caption": "РАДИО — ДРУГАЯ ВОЛНА",
+              "image_prompt": "Portrait 9:16 original layered space illustration, deep indigo and warm light, scientifically clear schematic objects, no lettering, no logos, no watermark. Radio electromagnetic wave reaching an astronaut receiver.",
+              "motion_kind": "sound",
+              "start_hint": 9.0,
+              "end_hint": 13.0,
+              "fact_ids": [
+                "radio-not-sound"
+              ],
+              "beats": [
+                "Радиосигнал пересекает промежуток",
+                "Приёмник создаёт звук"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "radio_signal"
+            },
+            {
+              "scene": 5,
+              "narration": "А в корабле есть воздух: там обычный разговор слышен. Не весь космос одинаково пуст.",
+              "caption": "ВНУТРИ КОРАБЛЯ ЕСТЬ ВОЗДУХ",
+              "image_prompt": "Portrait 9:16 original layered space illustration, deep indigo and warm light, scientifically clear schematic objects, no lettering, no logos, no watermark. Cutaway spacecraft with air particles and astronauts talking.",
+              "motion_kind": "sound",
+              "start_hint": 13.0,
+              "end_hint": 20,
+              "fact_ids": [
+                "sound-medium",
+                "radio-not-sound"
+              ],
+              "beats": [
+                "Камера раскрывает кабину",
+                "Возвращается цепочка воздушных колебаний"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "space_reveal"
+            }
+          ],
+          "estimated_speech_words_per_second": 2.0
+        },
+        "40": {
+          "spoken_word_count": 95,
+          "scenes": [
+            {
+              "scene": 1,
+              "narration": "Взрыв видно. Почему через вакуум его не слышно? В кино между этими событиями часто нет разницы.",
+              "caption": "ВИДНО, НО НЕ СЛЫШНО",
+              "image_prompt": "Portrait 9:16 original layered space illustration, deep indigo and warm light, scientifically clear schematic objects, no lettering, no logos, no watermark. Distant stylized flash in near-empty space, not an actual incident.",
+              "motion_kind": "sound",
+              "start_hint": 0,
+              "end_hint": 6.74,
+              "fact_ids": [
+                "sound-medium"
+              ],
+              "beats": [
+                "Далёкая вспышка",
+                "Свет достигает наблюдателя"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "space_flash"
+            },
+            {
+              "scene": 2,
+              "narration": "Звук — механическая волна. Частицы воздуха колеблются и передают возмущение соседним частицам. Так оно достигает уха. Средой бывает и твёрдое тело.",
+              "caption": "ЗВУКУ НУЖНА СРЕДА",
+              "image_prompt": "Portrait 9:16 original layered space illustration, deep indigo and warm light, scientifically clear schematic objects, no lettering, no logos, no watermark. Particles transferring a compression wave to neighboring particles.",
+              "motion_kind": "sound",
+              "start_hint": 6.74,
+              "end_hint": 15.58,
+              "fact_ids": [
+                "sound-medium"
+              ],
+              "beats": [
+                "Двигается первая частица",
+                "Колебание передаётся соседям"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "sound_wave"
+            },
+            {
+              "scene": 3,
+              "narration": "В вакууме нет такой цепочки передачи. Поэтому звуковая волна не может пересечь пустой промежуток между источником и наблюдателем.",
+              "caption": "В ВАКУУМЕ ЦЕПОЧКИ НЕТ",
+              "image_prompt": "Portrait 9:16 original layered space illustration, deep indigo and warm light, scientifically clear schematic objects, no lettering, no logos, no watermark. The particle chain ends at a vacuum gap, no sound wave crossing the gap.",
+              "motion_kind": "sound",
+              "start_hint": 15.58,
+              "end_hint": 23.16,
+              "fact_ids": [
+                "sound-medium"
+              ],
+              "beats": [
+                "Частицы исчезают из промежутка",
+                "Звуковая передача прекращается"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "vacuum_gap"
+            },
+            {
+              "scene": 4,
+              "narration": "Свет и радио устроены иначе: это электромагнитные волны, которым такая среда не нужна. Приёмник в шлеме превращает радиосигнал в звук.",
+              "caption": "РАДИО — ДРУГАЯ ВОЛНА",
+              "image_prompt": "Portrait 9:16 original layered space illustration, deep indigo and warm light, scientifically clear schematic objects, no lettering, no logos, no watermark. Radio electromagnetic wave reaching an astronaut receiver.",
+              "motion_kind": "sound",
+              "start_hint": 23.16,
+              "end_hint": 31.58,
+              "fact_ids": [
+                "radio-not-sound"
+              ],
+              "beats": [
+                "Радиосигнал пересекает промежуток",
+                "Приёмник создаёт звук"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "radio_signal"
+            },
+            {
+              "scene": 5,
+              "narration": "Внутри корабля есть воздух, и обычный разговор работает. Космос не всюду пуст, но вакуум сам по себе звук не переносит.",
+              "caption": "ВНУТРИ КОРАБЛЯ ЕСТЬ ВОЗДУХ",
+              "image_prompt": "Portrait 9:16 original layered space illustration, deep indigo and warm light, scientifically clear schematic objects, no lettering, no logos, no watermark. Cutaway spacecraft with air particles and astronauts talking.",
+              "motion_kind": "sound",
+              "start_hint": 31.58,
+              "end_hint": 40,
+              "fact_ids": [
+                "sound-medium",
+                "radio-not-sound"
+              ],
+              "beats": [
+                "Камера раскрывает кабину",
+                "Возвращается цепочка воздушных колебаний"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "space_reveal"
+            }
+          ],
+          "estimated_speech_words_per_second": 2.38
+        }
+      },
+      "motion_supported": false,
+      "motion_status": "family_motion_preview_needs_scene_specific_visual_QA",
+      "source_urls": [
+        "https://science.nasa.gov/ems/02_anatomy/",
+        "https://www.esa.int/Science_Exploration/Space_Science/Space_sensations/LISTEN_UP"
+      ]
+    },
+    "winter-tires": {
+      "title": "Что делает зимнюю шину зимней, кроме шипов?",
+      "description": "Зимний состав и ламели помогают шине работать на холоде. Объясняем механизм без обещания конкретного тормозного пути. Схематическая анимация. Источник: Continental; проверен 26.10.2026. https://www.continental-tires.com/ca/en/tire-knowledge/winter-tires-or-snow-tires/",
+      "tags": [
+        "зимние шины",
+        "резина",
+        "ламели",
+        "как это работает",
+        "Невидимый мир"
+      ],
+      "style": "EXPLAINER",
+      "hooks": [
+        {
+          "text": "Зимняя шина — это не только шипы. А что ещё?",
+          "clarity": 5,
+          "truthfulness": 5,
+          "intrigue": 4,
+          "selection_note": "Выбран: сразу ставит конкретный вопрос без преувеличения."
+        },
+        {
+          "text": "Почему рисунок протектора не объясняет всю зимнюю шину?",
+          "clarity": 4,
+          "truthfulness": 5,
+          "intrigue": 5,
+          "selection_note": "Альтернатива для небольшого последовательного теста."
+        },
+        {
+          "text": "Две шины на морозе. Почему резина ведёт себя по-разному?",
+          "clarity": 4,
+          "truthfulness": 5,
+          "intrigue": 4,
+          "selection_note": "Альтернатива для небольшого последовательного теста."
+        }
+      ],
+      "chosen_hook_index": 0,
+      "hook_selection": "Оцениваем ясность и правдивость прежде интриги; баллы субъективные, без имитации A/B-данных.",
+      "visual_assets": [
+        "Два оригинальных разреза без бренда",
+        "Схема мягкой и жёсткой полоски резины",
+        "Увеличенные ламели",
+        "Схема пятна контакта"
+      ],
+      "voice_plan": "Сначала аудиопревью Yandex SpeechKit / ermil; спокойная любознательная подача, естественные паузы. При наличии ключа и подтверждённого русского voice ID сравнить ElevenLabs Multilingual v2. Готовый звук прослушать человеком; -16 LUFS, потолок -1.5 dBTP. Без музыки.",
+      "edit_plan": "Начать с шины без шипов. Затем сравнить условное изгибание двух составов и приблизить ламели. Не рисовать экспериментальные тормозные расстояния. Каждый объект движется с понятной причиной; финал собирает состав и протектор вместе.",
+      "music": {
+        "use": false,
+        "license": null
+      },
+      "rights": "Оригинальная локальная векторная анимация; источники используются как фактическая опора, без копирования чужих фото и видео.",
+      "timing_notice": "Это монтажные ориентиры. После аудиопревью измерить реальную речь, сдвинуть сцены; не ускорять голос ради заданного числа секунд.",
+      "variants": {
+        "28": {
+          "spoken_word_count": 61,
+          "scenes": [
+            {
+              "scene": 1,
+              "narration": "Зимняя шина — это не только шипы. А что ещё?",
+              "caption": "ДЕЛО НЕ ТОЛЬКО В ШИПАХ",
+              "image_prompt": "Portrait 9:16 original vector tire explainer, anonymous unbranded tire, dark blue backdrop, cyan and amber comparison, no text, no logos, no watermark. A studless winter tire shown in three-quarter view.",
+              "motion_kind": "tire",
+              "start_hint": 0,
+              "end_hint": 4.59,
+              "fact_ids": [
+                "winter-compound"
+              ],
+              "beats": [
+                "Вращение шины",
+                "Крупный план без шипов"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "tire_rotate"
+            },
+            {
+              "scene": 2,
+              "narration": "Важен состав резины: на холоде он должен сохранять гибкость.",
+              "caption": "СОСТАВ СОХРАНЯЕТ ГИБКОСТЬ",
+              "image_prompt": "Portrait 9:16 original vector tire explainer, anonymous unbranded tire, dark blue backdrop, cyan and amber comparison, no text, no logos, no watermark. Two schematic rubber strips bending differently in cold conditions.",
+              "motion_kind": "tire",
+              "start_hint": 4.59,
+              "end_hint": 8.72,
+              "fact_ids": [
+                "winter-compound"
+              ],
+              "beats": [
+                "Появляются две полоски",
+                "Условное изгибание"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "rubber_flex"
+            },
+            {
+              "scene": 3,
+              "narration": "Так протектор лучше приспосабливается к неровностям поверхности, а не просто становится жёстким кольцом.",
+              "caption": "РЕЗИНА ПРИЛЕГАЕТ К ДОРОГЕ",
+              "image_prompt": "Portrait 9:16 original vector tire explainer, anonymous unbranded tire, dark blue backdrop, cyan and amber comparison, no text, no logos, no watermark. A tire contact patch deforming over simplified road texture.",
+              "motion_kind": "tire",
+              "start_hint": 8.72,
+              "end_hint": 14.69,
+              "fact_ids": [
+                "winter-compound"
+              ],
+              "beats": [
+                "Камера опускается к контакту",
+                "Резина огибает неровности"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "contact_patch"
+            },
+            {
+              "scene": 4,
+              "narration": "Ещё есть ламели: маленькие прорези создают дополнительные кромки сцепления со снегом.",
+              "caption": "ЛАМЕЛИ ДАЮТ ДОПОЛНИТЕЛЬНЫЕ КРОМКИ",
+              "image_prompt": "Portrait 9:16 original vector tire explainer, anonymous unbranded tire, dark blue backdrop, cyan and amber comparison, no text, no logos, no watermark. Close view of small sipes opening and contacting stylized snow.",
+              "motion_kind": "tire",
+              "start_hint": 14.69,
+              "end_hint": 19.74,
+              "fact_ids": [
+                "winter-compound"
+              ],
+              "beats": [
+                "Ламели раскрываются",
+                "Выделяются кромки"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "sipe_edges"
+            },
+            {
+              "scene": 5,
+              "narration": "Поэтому зимние свойства зависят и от смеси, и от рисунка. Но результат меняют износ, конкретная модель и дорога.",
+              "caption": "РАБОТАЮТ СОСТАВ И ПРОТЕКТОР",
+              "image_prompt": "Portrait 9:16 original vector tire explainer, anonymous unbranded tire, dark blue backdrop, cyan and amber comparison, no text, no logos, no watermark. Tire cutaway combining rubber compound and tread details.",
+              "motion_kind": "tire",
+              "start_hint": 19.74,
+              "end_hint": 28,
+              "fact_ids": [
+                "winter-compound"
+              ],
+              "beats": [
+                "Состав и рисунок собираются вместе",
+                "Финальный общий вид"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "tire_reveal"
+            }
+          ],
+          "estimated_speech_words_per_second": 2.18
+        },
+        "20": {
+          "spoken_word_count": 43,
+          "scenes": [
+            {
+              "scene": 1,
+              "narration": "Зимняя шина — это не только шипы. А что ещё?",
+              "caption": "ДЕЛО НЕ ТОЛЬКО В ШИПАХ",
+              "image_prompt": "Portrait 9:16 original vector tire explainer, anonymous unbranded tire, dark blue backdrop, cyan and amber comparison, no text, no logos, no watermark. A studless winter tire shown in three-quarter view.",
+              "motion_kind": "tire",
+              "start_hint": 0,
+              "end_hint": 4.65,
+              "fact_ids": [
+                "winter-compound"
+              ],
+              "beats": [
+                "Вращение шины",
+                "Крупный план без шипов"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "tire_rotate"
+            },
+            {
+              "scene": 2,
+              "narration": "Её резиновый состав сохраняет гибкость на холоде.",
+              "caption": "СОСТАВ СОХРАНЯЕТ ГИБКОСТЬ",
+              "image_prompt": "Portrait 9:16 original vector tire explainer, anonymous unbranded tire, dark blue backdrop, cyan and amber comparison, no text, no logos, no watermark. Two schematic rubber strips bending differently in cold conditions.",
+              "motion_kind": "tire",
+              "start_hint": 4.65,
+              "end_hint": 7.91,
+              "fact_ids": [
+                "winter-compound"
+              ],
+              "beats": [
+                "Появляются две полоски",
+                "Условное изгибание"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "rubber_flex"
+            },
+            {
+              "scene": 3,
+              "narration": "Гибкий протектор лучше прилегает к неровностям.",
+              "caption": "РЕЗИНА ПРИЛЕГАЕТ К ДОРОГЕ",
+              "image_prompt": "Portrait 9:16 original vector tire explainer, anonymous unbranded tire, dark blue backdrop, cyan and amber comparison, no text, no logos, no watermark. A tire contact patch deforming over simplified road texture.",
+              "motion_kind": "tire",
+              "start_hint": 7.91,
+              "end_hint": 10.7,
+              "fact_ids": [
+                "winter-compound"
+              ],
+              "beats": [
+                "Камера опускается к контакту",
+                "Резина огибает неровности"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "contact_patch"
+            },
+            {
+              "scene": 4,
+              "narration": "Ламели добавляют кромки, цепляющиеся за снег.",
+              "caption": "ЛАМЕЛИ ДАЮТ ДОПОЛНИТЕЛЬНЫЕ КРОМКИ",
+              "image_prompt": "Portrait 9:16 original vector tire explainer, anonymous unbranded tire, dark blue backdrop, cyan and amber comparison, no text, no logos, no watermark. Close view of small sipes opening and contacting stylized snow.",
+              "motion_kind": "tire",
+              "start_hint": 10.7,
+              "end_hint": 13.49,
+              "fact_ids": [
+                "winter-compound"
+              ],
+              "beats": [
+                "Ламели раскрываются",
+                "Выделяются кромки"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "sipe_edges"
+            },
+            {
+              "scene": 5,
+              "narration": "Работают смесь и рисунок вместе. Но сцепление зависит ещё от модели, износа и дороги.",
+              "caption": "РАБОТАЮТ СОСТАВ И ПРОТЕКТОР",
+              "image_prompt": "Portrait 9:16 original vector tire explainer, anonymous unbranded tire, dark blue backdrop, cyan and amber comparison, no text, no logos, no watermark. Tire cutaway combining rubber compound and tread details.",
+              "motion_kind": "tire",
+              "start_hint": 13.49,
+              "end_hint": 20,
+              "fact_ids": [
+                "winter-compound"
+              ],
+              "beats": [
+                "Состав и рисунок собираются вместе",
+                "Финальный общий вид"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "tire_reveal"
+            }
+          ],
+          "estimated_speech_words_per_second": 2.15
+        },
+        "40": {
+          "spoken_word_count": 96,
+          "scenes": [
+            {
+              "scene": 1,
+              "narration": "Зимняя шина — это не только шипы. А что ещё? Посмотрим на резину и протектор крупнее.",
+              "caption": "ДЕЛО НЕ ТОЛЬКО В ШИПАХ",
+              "image_prompt": "Portrait 9:16 original vector tire explainer, anonymous unbranded tire, dark blue backdrop, cyan and amber comparison, no text, no logos, no watermark. A studless winter tire shown in three-quarter view.",
+              "motion_kind": "tire",
+              "start_hint": 0,
+              "end_hint": 6.67,
+              "fact_ids": [
+                "winter-compound"
+              ],
+              "beats": [
+                "Вращение шины",
+                "Крупный план без шипов"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "tire_rotate"
+            },
+            {
+              "scene": 2,
+              "narration": "Зимний состав рассчитан на сохранение гибкости при низкой температуре. Один только агрессивный рисунок не заменяет подходящих свойств резиновой смеси.",
+              "caption": "СОСТАВ СОХРАНЯЕТ ГИБКОСТЬ",
+              "image_prompt": "Portrait 9:16 original vector tire explainer, anonymous unbranded tire, dark blue backdrop, cyan and amber comparison, no text, no logos, no watermark. Two schematic rubber strips bending differently in cold conditions.",
+              "motion_kind": "tire",
+              "start_hint": 6.67,
+              "end_hint": 14.59,
+              "fact_ids": [
+                "winter-compound"
+              ],
+              "beats": [
+                "Появляются две полоски",
+                "Условное изгибание"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "rubber_flex"
+            },
+            {
+              "scene": 3,
+              "narration": "Когда резина остаётся гибкой, протектор может лучше приспосабливаться к неровностям дороги. На схеме это видно как изменение формы участка контакта.",
+              "caption": "РЕЗИНА ПРИЛЕГАЕТ К ДОРОГЕ",
+              "image_prompt": "Portrait 9:16 original vector tire explainer, anonymous unbranded tire, dark blue backdrop, cyan and amber comparison, no text, no logos, no watermark. A tire contact patch deforming over simplified road texture.",
+              "motion_kind": "tire",
+              "start_hint": 14.59,
+              "end_hint": 22.92,
+              "fact_ids": [
+                "winter-compound"
+              ],
+              "beats": [
+                "Камера опускается к контакту",
+                "Резина огибает неровности"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "contact_patch"
+            },
+            {
+              "scene": 4,
+              "narration": "Маленькие прорези называют ламелями. Их кромки помогают сцеплению со снегом. Это отдельный механизм, который дополняет свойства резины.",
+              "caption": "ЛАМЕЛИ ДАЮТ ДОПОЛНИТЕЛЬНЫЕ КРОМКИ",
+              "image_prompt": "Portrait 9:16 original vector tire explainer, anonymous unbranded tire, dark blue backdrop, cyan and amber comparison, no text, no logos, no watermark. Close view of small sipes opening and contacting stylized snow.",
+              "motion_kind": "tire",
+              "start_hint": 22.92,
+              "end_hint": 30.0,
+              "fact_ids": [
+                "winter-compound"
+              ],
+              "beats": [
+                "Ламели раскрываются",
+                "Выделяются кромки"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "sipe_edges"
+            },
+            {
+              "scene": 5,
+              "narration": "Поэтому зимняя работа шины — сочетание состава и протектора. Но конкретный результат зависит от модели, износа и покрытия: одинакового тормозного пути для всех нет.",
+              "caption": "РАБОТАЮТ СОСТАВ И ПРОТЕКТОР",
+              "image_prompt": "Portrait 9:16 original vector tire explainer, anonymous unbranded tire, dark blue backdrop, cyan and amber comparison, no text, no logos, no watermark. Tire cutaway combining rubber compound and tread details.",
+              "motion_kind": "tire",
+              "start_hint": 30.0,
+              "end_hint": 40,
+              "fact_ids": [
+                "winter-compound"
+              ],
+              "beats": [
+                "Состав и рисунок собираются вместе",
+                "Финальный общий вид"
+              ],
+              "visual_label": "Схематическая иллюстрация; не документальная запись.",
+              "planned_motion_kind": "tire_reveal"
+            }
+          ],
+          "estimated_speech_words_per_second": 2.4
+        }
+      },
+      "motion_supported": false,
+      "motion_status": "family_motion_preview_needs_scene_specific_visual_QA",
+      "source_urls": [
+        "https://www.continental-tires.com/ca/en/tire-knowledge/winter-tires-or-snow-tires/"
+      ]
+    }
+  }
+}

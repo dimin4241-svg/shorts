@@ -30,6 +30,15 @@ def make_audio(
     if provider == "none":
         return None
     prepared = prepare_speech_text(text, provider, glossary or {})
+    if provider == "azure":
+        from .azure_speech import synthesize_azure
+        path = output_dir / f"audio_{index:02d}.mp3"
+        synthesize_azure(prepared, path, voice=voice or "ru-RU-DmitryNeural", language=language, speed=speed, delivery=delivery)
+        return path
+    if provider == "local":
+        from .local_tts import synthesize_local
+        path = output_dir / f"audio_{index:02d}.wav"
+        return synthesize_local(prepared, path, voice=voice, language=language, speed=speed, delivery=delivery)
     if provider in {"openai", "yandex", "elevenlabs"}:
         path = output_dir / f"audio_{index:02d}.mp3"
         synthesize_audio(
@@ -44,7 +53,9 @@ def make_audio(
         path = output_dir / f"audio_{index:02d}.aiff"
         selected_voice = voice or _macos_russian_voice()
         # macOS say uses words per minute, not a relative speed multiplier.
-        cmd = ["say", "-v", selected_voice, "-r", str(round(175 * speed)), "-o", str(path), prepared]
+        # Russian multi-syllable narration benefits from a measured local baseline.
+        # This controls synthesis only; the renderer never time-stretches speech.
+        cmd = ["say", "-v", selected_voice, "-r", str(round(160 * speed)), "-o", str(path), prepared]
         proc = subprocess.run(cmd, capture_output=True, text=True)
         if proc.returncode:
             raise RuntimeError("macOS speech failed. List installed voices with: say -v '?'")

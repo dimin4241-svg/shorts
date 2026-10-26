@@ -5,6 +5,7 @@ No key is saved to source, logs or output metadata.
 from __future__ import annotations
 
 import base64
+import binascii
 import os
 from pathlib import Path
 
@@ -38,15 +39,28 @@ def _openai_headers() -> dict:
     return {"Authorization": f"Bearer {_key('OPENAI_API_KEY')}", "Content-Type": "application/json"}
 
 
+def _object(response: httpx.Response) -> dict:
+    try:
+        value = response.json()
+    except ValueError:
+        raise RuntimeError("Provider returned malformed JSON") from None
+    if not isinstance(value, dict):
+        raise RuntimeError("Provider returned a non-object JSON response")
+    return value
+
+
 def openai_text(prompt: str) -> str:
-    result = _request(
+    result = _object(_request(
         "https://api.openai.com/v1/responses", headers=_openai_headers(),
         json={"model": os.getenv("OPENAI_TEXT_MODEL", "gpt-4.1-mini"),
               "input": [{"role": "user", "content": [{"type": "input_text", "text": prompt}]}],
               "max_output_tokens": 2100},
-    ).json()
-    texts = [part.get("text", "") for block in result.get("output", [])
-             for part in block.get("content", []) if part.get("type") == "output_text"]
+    ))
+    blocks = result.get("output")
+    if not isinstance(blocks, list):
+        raise RuntimeError("OpenAI returned malformed output blocks")
+    texts = [part["text"] for block in blocks if isinstance(block, dict) and isinstance(block.get("content"), list)
+             for part in block["content"] if isinstance(part, dict) and part.get("type") == "output_text" and isinstance(part.get("text"), str)]
     combined = "\n".join(texts).strip()
     if not combined:
         raise RuntimeError("OpenAI returned no storyboard text")
@@ -54,13 +68,16 @@ def openai_text(prompt: str) -> str:
 
 
 def anthropic_text(prompt: str, *, max_tokens: int = 3000) -> str:
-    result = _request(
+    result = _object(_request(
         "https://api.anthropic.com/v1/messages",
         headers={"x-api-key": _key("ANTHROPIC_API_KEY"), "anthropic-version": "2023-06-01", "Content-Type": "application/json"},
         json={"model": os.getenv("ANTHROPIC_TEXT_MODEL", "claude-sonnet-4-5"),
               "max_tokens": max_tokens, "messages": [{"role": "user", "content": prompt}]},
-    ).json()
-    combined = "\n".join(item.get("text", "") for item in result.get("content", []) if item.get("type") == "text").strip()
+    ))
+    blocks = result.get("content")
+    if not isinstance(blocks, list):
+        raise RuntimeError("Claude returned malformed content blocks")
+    combined = "\n".join(item["text"] for item in blocks if isinstance(item, dict) and item.get("type") == "text" and isinstance(item.get("text"), str)).strip()
     if not combined:
         raise RuntimeError("Claude returned no text")
     return combined
@@ -89,13 +106,13 @@ def openai_image(prompt: str, destination: Path, *, style: str) -> None:
     )
     payload = {"model": os.getenv("OPENAI_IMAGE_MODEL", "gpt-image-1-mini"),
                "prompt": final_prompt, "size": "1024x1536", "quality": "medium", "n": 1}
-    data = _request("https://api.openai.com/v1/images/generations", headers=_openai_headers(), json=payload).json()
+    data = _object(_request("https://api.openai.com/v1/images/generations", headers=_openai_headers(), json=payload))
     images = data.get("data", [])
-    if not images or not images[0].get("b64_json"):
+    if not isinstance(images, list) or not images or not isinstance(images[0], dict) or not isinstance(images[0].get("b64_json"), str):
         raise RuntimeError("Image provider returned no base64 image")
     try:
         destination.write_bytes(base64.b64decode(images[0]["b64_json"], validate=True))
-    except ValueError as exc:
+    except (ValueError, binascii.Error) as exc:
         raise RuntimeError("Invalid image returned by provider") from exc
 
 

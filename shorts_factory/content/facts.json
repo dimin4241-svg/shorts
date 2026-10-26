@@ -1,0 +1,592 @@
+{
+  "schema_version": 1,
+  "researched_at": "2026-10-26",
+  "sources": {
+    "itu-cables": {
+      "id": "itu-cables",
+      "title": "ITU — Submarine Cable Resilience",
+      "url": "https://www.itu.int/digital-resilience/submarine-cables/",
+      "kind": "official",
+      "checked_at": "2026-10-26",
+      "status": "accessible",
+      "published_at": null,
+      "verification": "Read public source through web research; no authenticated or paid access.",
+      "notes": ""
+    },
+    "itu-2026": {
+      "id": "itu-2026",
+      "title": "ITU — Submarine cable resilience final report approved",
+      "url": "https://www.itu.int/en/mediacentre/Pages/PR-2026-07-10-Submarine-cable-resilience-report.aspx",
+      "kind": "official",
+      "checked_at": "2026-10-26",
+      "status": "accessible",
+      "published_at": "2026-07-10",
+      "verification": "Read public source through web research; no authenticated or paid access.",
+      "notes": "Уязвимость стран с малым числом систем и значение географически независимых маршрутов. Не переносить долю международного трафика на весь внутренний трафик интернета."
+    },
+    "ec-cables": {
+      "id": "ec-cables",
+      "title": "European Commission — Cable security toolbox",
+      "url": "https://digital-strategy.ec.europa.eu/en/news/commission-increases-submarine-cable-security-eu347-million-investment-and-new-toolbox",
+      "kind": "official",
+      "checked_at": "2026-10-26",
+      "status": "accessible",
+      "published_at": "2026-02-05",
+      "verification": "Read public source through web research; no authenticated or paid access.",
+      "notes": "В тексте 99% относится к intercontinental internet traffic. В озвучке используем «основная часть», без процента."
+    },
+    "itu-fiber": {
+      "id": "itu-fiber",
+      "title": "ITU-T G Supplement 41 — Optical fibre submarine systems",
+      "url": "https://www.itu.int/epublications/publication/itu-t-g-suppl-41-2024-07-design-guidelines-for-optical-fibre-submarine-cable-systems",
+      "kind": "official",
+      "checked_at": "2026-10-26",
+      "status": "accessible",
+      "published_at": "2024-07",
+      "verification": "Read public source through web research; no authenticated or paid access.",
+      "notes": ""
+    },
+    "nokia-fiber": {
+      "id": "nokia-fiber",
+      "title": "Nokia — Subsea network solutions",
+      "url": "https://www.nokia.com/optical-networks/subsea-network-solutions/",
+      "kind": "manufacturer",
+      "checked_at": "2026-10-26",
+      "status": "accessible",
+      "published_at": null,
+      "verification": "Read public source through web research; no authenticated or paid access.",
+      "notes": "Раздел WDM: разные длины волн несут параллельные каналы. Цвет в иллюстрации условный: рабочий свет в оптоволокне обычно инфракрасный."
+    },
+    "isoc-cables": {
+      "id": "isoc-cables",
+      "title": "Internet Society — Enhancing submarine Internet resilience",
+      "url": "https://www.internetsociety.org/resources/policybriefs/2025/enhancing-the-resilience-of-submarine-internet-infrastructure/",
+      "kind": "primary_report",
+      "checked_at": "2026-10-26",
+      "status": "accessible",
+      "published_at": "2025",
+      "verification": "Read public source through web research; no authenticated or paid access.",
+      "notes": "Высокая ёмкость, малая задержка, резервирование. Приведён собственный анализ наблюдений Pulse; не утверждать превосходство над каждым современным спутниковым маршрутом."
+    },
+    "apple-cold": {
+      "id": "apple-cold",
+      "title": "Apple — If iPhone or iPad gets too hot or too cold",
+      "url": "https://support.apple.com/en-us/118431",
+      "kind": "manufacturer",
+      "checked_at": "2026-10-26",
+      "status": "accessible",
+      "published_at": null,
+      "verification": "Read public source through web research; no authenticated or paid access.",
+      "notes": "Временное сокращение времени работы и выключение на холоде; поведение зависит от устройства."
+    },
+    "nist-battery": {
+      "id": "nist-battery",
+      "title": "NIST — Power Supply Issues in Battery Reliant Wireless Sensor Networks",
+      "url": "https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=911922",
+      "kind": "research",
+      "checked_at": "2026-10-26",
+      "status": "accessible",
+      "published_at": null,
+      "verification": "Read public source through web research; no authenticated or paid access.",
+      "notes": "Раздел 4.2: снижение химической активности, рост внутреннего сопротивления при охлаждении. Никакого универсального процента потери ёмкости."
+    },
+    "ucsd-battery": {
+      "id": "ucsd-battery",
+      "title": "UC San Diego — Tailoring electrolyte solvation at ultra-low temperature",
+      "url": "https://cmp.ucsd.edu/publication/s41560-021-00783-z/055.s41560-021-00783-z.pdf",
+      "kind": "research",
+      "checked_at": "2026-10-26",
+      "status": "accessible",
+      "published_at": "2021",
+      "verification": "Read public source through web research; no authenticated or paid access.",
+      "notes": "Физическая причина ограничения переноса заряда; результаты экспериментальной литий-металлической ячейки не переносятся на серийный телефон."
+    },
+    "faa-glide": {
+      "id": "faa-glide",
+      "title": "FAA Lessons Learned — Airbus A320-214 N160US",
+      "url": "https://www.faa.gov/lessonslearned/transportairplane/accidents/N160US",
+      "kind": "official",
+      "checked_at": "2026-10-26",
+      "status": "accessible",
+      "published_at": null,
+      "verification": "Read public source through web research; no authenticated or paid access.",
+      "notes": "Раздел Airplane Performance: при потере всей тяги самолёт планирует. Случай — иллюстрация физики, не обещание безопасного исхода."
+    },
+    "doe-backup": {
+      "id": "doe-backup",
+      "title": "US DOE — Solar and Resilience Basics",
+      "url": "https://www.energy.gov/cmei/systems/solar-and-resilience-basics",
+      "kind": "official",
+      "checked_at": "2026-10-26",
+      "status": "accessible",
+      "published_at": null,
+      "verification": "Read public source through web research; no authenticated or paid access.",
+      "notes": "Резервное питание и островной режим могут поддерживать отдельные системы при потере сети."
+    },
+    "nist-gps": {
+      "id": "nist-gps",
+      "title": "NIST TN 2189 — Critical infrastructure timing dependencies on GPS",
+      "url": "https://www.nist.gov/publications/evaluation-dependencies-critical-infrastructure-timing-systems-global-positioning",
+      "kind": "research",
+      "checked_at": "2026-10-26",
+      "status": "accessible",
+      "published_at": "2021-11-01",
+      "verification": "Read public source through web research; no authenticated or paid access.",
+      "notes": "Американский инфраструктурный контекст. Это не прогноз синхронного мирового коллапса за сутки."
+    },
+    "nist-pnt": {
+      "id": "nist-pnt",
+      "title": "NIST — Responsible Use of PNT Services",
+      "url": "https://www.nist.gov/pnt",
+      "kind": "official",
+      "checked_at": "2026-10-26",
+      "status": "accessible",
+      "published_at": null,
+      "verification": "Read public source through web research; no authenticated or paid access.",
+      "notes": "Синхронизация связи, временные метки финансовых операций и необходимость устойчивости к сбоям GPS."
+    },
+    "nasa-rotation": {
+      "id": "nasa-rotation",
+      "title": "NASA Cosmicopia — Why Can’t I Feel the Earth Turning?",
+      "url": "https://cosmicopia.gsfc.nasa.gov/qa_gp_ev.html",
+      "kind": "official",
+      "checked_at": "2026-10-26",
+      "status": "accessible",
+      "published_at": null,
+      "verification": "Read public source through web research; no authenticated or paid access.",
+      "notes": "Слабое постоянное центробежное действие и совместное движение окружения; вращение связано с ускорением, нельзя говорить, что ускорения совсем нет."
+    },
+    "eia-oil": {
+      "id": "eia-oil",
+      "title": "EIA — Use of oil",
+      "url": "https://www.eia.gov/energyexplained/oil-and-petroleum-products/use-of-oil.php",
+      "kind": "official",
+      "checked_at": "2026-10-26",
+      "status": "accessible",
+      "published_at": null,
+      "verification": "Read public source through web research; no authenticated or paid access.",
+      "notes": "Нефтепродукты применяются в транспорте и как химическое сырьё; точная скорость последствий зависит от запасов и сценария."
+    },
+    "nasa-sound": {
+      "id": "nasa-sound",
+      "title": "NASA Science — Anatomy of an Electromagnetic Wave",
+      "url": "https://science.nasa.gov/ems/02_anatomy/",
+      "kind": "official",
+      "checked_at": "2026-10-26",
+      "status": "accessible",
+      "published_at": null,
+      "verification": "Read public source through web research; no authenticated or paid access.",
+      "notes": "Звуку нужна среда, электромагнитным волнам вакуум не мешает. Не говорить, что нигде в космосе нет среды."
+    },
+    "esa-sound": {
+      "id": "esa-sound",
+      "title": "ESA — Listen Up!",
+      "url": "https://www.esa.int/Science_Exploration/Space_Science/Space_sensations/LISTEN_UP",
+      "kind": "official",
+      "checked_at": "2026-10-26",
+      "status": "accessible",
+      "published_at": "2003-07-24",
+      "verification": "Read public source through web research; no authenticated or paid access.",
+      "notes": "Радиоволны превращаются в звук приёмником; это не запись звуковой волны, летящей через вакуум."
+    },
+    "boe-payments": {
+      "id": "boe-payments",
+      "title": "Bank of England — Payment and settlement",
+      "url": "https://www.bankofengland.co.uk/Payment%20and%20settlement",
+      "kind": "official",
+      "checked_at": "2026-10-26",
+      "status": "accessible",
+      "published_at": null,
+      "verification": "Read public source through web research; no authenticated or paid access.",
+      "notes": "Объяснение учётных записей и межбанковского расчёта на примере Великобритании. Схемы и сроки в других юрисдикциях различаются."
+    },
+    "nws-lightning": {
+      "id": "nws-lightning",
+      "title": "US National Weather Service — Lightning and Planes",
+      "url": "https://www.weather.gov/safety/lightning-planes",
+      "kind": "official",
+      "checked_at": "2026-10-26",
+      "status": "accessible",
+      "published_at": null,
+      "verification": "Read public source through web research; no authenticated or paid access.",
+      "notes": "Коммерческие пассажирские самолёты проектируют с путями для тока; после подозрения на удар предусмотрен осмотр. Не обобщать на все малые самолёты."
+    },
+    "faa-doors": {
+      "id": "faa-doors",
+      "title": "FAA AC 25.783-1A — Fuselage Doors and Hatches",
+      "url": "https://www.faa.gov/documentLibrary/media/Advisory_Circular/AC_25_783-1A.pdf",
+      "kind": "official",
+      "checked_at": "2026-10-26",
+      "status": "accessible",
+      "published_at": null,
+      "verification": "Read public source through web research; no authenticated or paid access.",
+      "notes": "Закрытие, запирание, блокировки, перепад давления. Нельзя переносить объяснение на любой тип двери, любую высоту и разгерметизированную кабину."
+    },
+    "continental-winter": {
+      "id": "continental-winter",
+      "title": "Continental — Winter tires or snow tires?",
+      "url": "https://www.continental-tires.com/ca/en/tire-knowledge/winter-tires-or-snow-tires/",
+      "kind": "manufacturer",
+      "checked_at": "2026-10-26",
+      "status": "accessible",
+      "published_at": null,
+      "verification": "Read public source through web research; no authenticated or paid access.",
+      "notes": "Эластичность зимнего состава и ламели. Без обещаний конкретного тормозного пути; производитель — заинтересованный источник."
+    },
+    "nasa-fan": {
+      "id": "nasa-fan",
+      "title": "NASA Glenn — Turbofan Thrust",
+      "url": "https://www.grc.nasa.gov/www/k-12/BGP/turbfan.html",
+      "kind": "official",
+      "checked_at": "2026-10-26",
+      "status": "accessible",
+      "published_at": null,
+      "verification": "Read public source through web research; no authenticated or paid access.",
+      "notes": "Разделение потока: ядро и внешний контур. Не переносить характеристики на конкретный ПД-8 без проверки модели."
+    },
+    "nasa-orbit": {
+      "id": "nasa-orbit",
+      "title": "NASA — What is Microgravity?",
+      "url": "https://www.nasa.gov/centers-and-facilities/glenn/what-is-microgravity/",
+      "kind": "official",
+      "checked_at": "2026-10-26",
+      "status": "accessible",
+      "published_at": "2009-02-13",
+      "verification": "Read public source through web research; no authenticated or paid access.",
+      "notes": "На орбите гравитация остаётся сильной; станция, человек и предметы падают вместе."
+    },
+    "google-trends-ru": {
+      "id": "google-trends-ru",
+      "title": "Google Trends — Trending Now, Russia, 24 hours",
+      "url": "https://trends.google.com/trending?geo=RU",
+      "kind": "public_trend_snapshot",
+      "checked_at": "2026-10-26",
+      "status": "accessible",
+      "published_at": null,
+      "verification": "Read public source through web research; no authenticated or paid access.",
+      "notes": "Прочитан публичный срез России за 24 часа. Поисковый интерес, не просмотры Shorts и не русскоязычная аудитория всего мира."
+    },
+    "tiktok-trends": {
+      "id": "tiktok-trends",
+      "title": "TikTok Creative Center — Trends",
+      "url": "https://ads.tiktok.com/creative/creativeCenter/trends",
+      "kind": "public_platform_page",
+      "checked_at": "2026-10-26",
+      "status": "accessible",
+      "published_at": null,
+      "verification": "Read public source through web research; no authenticated or paid access.",
+      "notes": "Оболочка доступна; релевантные российские метрики тем и периодов в текстовом ответе отсутствуют."
+    },
+    "youtube-api": {
+      "id": "youtube-api",
+      "title": "YouTube Data API documentation",
+      "url": "https://developers.google.com/youtube/v3",
+      "kind": "official_documentation",
+      "checked_at": "2026-10-26",
+      "status": "accessible",
+      "published_at": null,
+      "verification": "Read public source through web research; no authenticated or paid access.",
+      "notes": "Документация доступна; это не выгрузка видео и не источник полученных метрик."
+    },
+    "youtube-discovery": {
+      "id": "youtube-discovery",
+      "title": "YouTube — Search and discovery tips, Shorts",
+      "url": "https://support.google.com/youtube/answer/11914225?co=YOUTUBE._YTVideoType%3Dshorts",
+      "kind": "official_documentation",
+      "checked_at": "2026-10-26",
+      "status": "accessible",
+      "published_at": null,
+      "verification": "Read public source through web research; no authenticated or paid access.",
+      "notes": "Публикация не доказывает интерес к конкретной теме; данные удержания появятся после публикации."
+    }
+  },
+  "claims": [
+    {
+      "id": "cable-share",
+      "topic_ids": [
+        "submarine-cables",
+        "cable-country"
+      ],
+      "claim": "Основная часть интернет-трафика между континентами проходит по подводным кабелям.",
+      "source_ids": [
+        "ec-cables",
+        "itu-cables"
+      ],
+      "scope_limit": "Не доля всего интернета, включая внутренний трафик; проценты в разных источниках имеют разный охват.",
+      "checked_at": "2026-10-26",
+      "status": "supported",
+      "review_required_before_publish": false
+    },
+    {
+      "id": "fiber-parallel",
+      "topic_ids": [
+        "submarine-cables"
+      ],
+      "claim": "Оптоволоконная система передаёт данные светом; разные длины волн могут нести параллельные каналы.",
+      "source_ids": [
+        "itu-fiber",
+        "nokia-fiber"
+      ],
+      "scope_limit": "Условные видимые цвета показывают разные длины волн; это не буквальный вид кабеля в океане.",
+      "checked_at": "2026-10-26",
+      "status": "supported",
+      "review_required_before_publish": false
+    },
+    {
+      "id": "fiber-capacity",
+      "topic_ids": [
+        "submarine-cables"
+      ],
+      "claim": "Подводное оптоволокно обеспечивает высокую пропускную способность и малую задержку на международных линиях.",
+      "source_ids": [
+        "isoc-cables"
+      ],
+      "scope_limit": "Не утверждать, что любой кабель быстрее любого низкоорбитального спутникового пути.",
+      "checked_at": "2026-10-26",
+      "status": "supported",
+      "review_required_before_publish": false
+    },
+    {
+      "id": "cable-backup",
+      "topic_ids": [
+        "submarine-cables",
+        "cable-country"
+      ],
+      "claim": "Разные маршруты и резервная ёмкость позволяют перенаправлять трафик при повреждении; при малом числе путей последствия сильнее.",
+      "source_ids": [
+        "itu-2026",
+        "isoc-cables"
+      ],
+      "scope_limit": "Резерв может быть недостаточен; перенаправление не гарантирует полного восстановления и может идти по наземной линии.",
+      "checked_at": "2026-10-26",
+      "status": "supported",
+      "review_required_before_publish": false
+    },
+    {
+      "id": "cable-satellites",
+      "topic_ids": [
+        "submarine-cables"
+      ],
+      "claim": "Спутники полезны для удалённых мест и резервирования, дополняя кабельную инфраструктуру.",
+      "source_ids": [
+        "isoc-cables"
+      ],
+      "scope_limit": "Варианты орбит и маршрутов различаются; не изображать спутниковую связь бесполезной.",
+      "checked_at": "2026-10-26",
+      "status": "supported",
+      "review_required_before_publish": false
+    },
+    {
+      "id": "cold-device",
+      "topic_ids": [
+        "cold-phone"
+      ],
+      "claim": "Сильный холод может временно сократить время работы телефона и вызвать выключение; после нормального согревания работа может восстановиться.",
+      "source_ids": [
+        "apple-cold"
+      ],
+      "scope_limit": "Источник о iPhone/iPad; не гарантировать восстановление неисправной или старой батареи.",
+      "checked_at": "2026-10-26",
+      "status": "supported",
+      "review_required_before_publish": false
+    },
+    {
+      "id": "cold-chemistry",
+      "topic_ids": [
+        "cold-phone"
+      ],
+      "claim": "Охлаждение замедляет перенос заряда и химические процессы, повышает внутреннее сопротивление батареи.",
+      "source_ids": [
+        "nist-battery",
+        "ucsd-battery"
+      ],
+      "scope_limit": "Упрощение сложной электрохимии; степень эффекта зависит от химии и состояния батареи.",
+      "checked_at": "2026-10-26",
+      "status": "supported",
+      "review_required_before_publish": false
+    },
+    {
+      "id": "glide-no-thrust",
+      "topic_ids": [
+        "both-engines"
+      ],
+      "claim": "При потере всей тяги движущийся самолёт может планировать, постепенно теряя высоту.",
+      "source_ids": [
+        "faa-glide"
+      ],
+      "scope_limit": "Не гарантия посадки. Дальность зависит от высоты, скорости, ветра, массы и конфигурации.",
+      "checked_at": "2026-10-26",
+      "status": "supported",
+      "review_required_before_publish": false
+    },
+    {
+      "id": "outage-backup",
+      "topic_ids": [
+        "minute-power"
+      ],
+      "claim": "При исчезновении внешнего питания системы с исправным резервом могут продолжить работу, остальные отключаются.",
+      "source_ids": [
+        "doe-backup"
+      ],
+      "scope_limit": "Гипотеза о минуте исчезновения внешней сети; исчезновение самой физической электрической силы не моделируется.",
+      "checked_at": "2026-10-26",
+      "status": "supported",
+      "review_required_before_publish": false
+    },
+    {
+      "id": "gps-time",
+      "topic_ids": [
+        "gps-day"
+      ],
+      "claim": "GPS даёт не только координаты, но и точное время для инфраструктурных систем.",
+      "source_ids": [
+        "nist-gps",
+        "nist-pnt"
+      ],
+      "scope_limit": "GPS — одна система; другие GNSS и локальные часы могут сохраняться. Нельзя гарантировать глобальные последствия за сутки.",
+      "checked_at": "2026-10-26",
+      "status": "supported",
+      "review_required_before_publish": false
+    },
+    {
+      "id": "rotation-feeling",
+      "topic_ids": [
+        "earth-rotation"
+      ],
+      "claim": "Мы движемся вместе с Землёй и окружением; постоянное действие вращения мало по сравнению с привычными силами.",
+      "source_ids": [
+        "nasa-rotation"
+      ],
+      "scope_limit": "Не утверждать отсутствие ускорения при круговом движении; вращение измеримо.",
+      "checked_at": "2026-10-26",
+      "status": "supported",
+      "review_required_before_publish": false
+    },
+    {
+      "id": "oil-uses",
+      "topic_ids": [
+        "oil-stop"
+      ],
+      "claim": "Нефтепродукты служат транспортным топливом и сырьём для химических материалов.",
+      "source_ids": [
+        "eia-oil"
+      ],
+      "scope_limit": "Это механизм зависимости, не расписание мирового кризиса; запасы и замены меняют последствия.",
+      "checked_at": "2026-10-26",
+      "status": "supported",
+      "review_required_before_publish": false
+    },
+    {
+      "id": "sound-medium",
+      "topic_ids": [
+        "space-sound"
+      ],
+      "claim": "Для звуковой волны нужна материальная среда; через вакуум она не распространяется.",
+      "source_ids": [
+        "nasa-sound"
+      ],
+      "scope_limit": "В космосе есть газ, плазма и твёрдые тела; не говорить, что звук невозможен вообще везде за атмосферой.",
+      "checked_at": "2026-10-26",
+      "status": "supported",
+      "review_required_before_publish": false
+    },
+    {
+      "id": "radio-not-sound",
+      "topic_ids": [
+        "space-sound"
+      ],
+      "claim": "Радиоволны проходят через вакуум; приёмник преобразует сигнал в слышимый звук.",
+      "source_ids": [
+        "esa-sound"
+      ],
+      "scope_limit": "Радиосвязь и озвучивание данных не являются акустической записью звука, прошедшего вакуум.",
+      "checked_at": "2026-10-26",
+      "status": "supported",
+      "review_required_before_publish": false
+    },
+    {
+      "id": "bank-ledgers",
+      "topic_ids": [
+        "bank-transfer"
+      ],
+      "claim": "Безналичный платёж меняет учётные записи; перевод между банками требует межбанковского расчёта.",
+      "source_ids": [
+        "boe-payments"
+      ],
+      "scope_limit": "Конкретные правила и сроки зависят от платёжной системы; пример Великобритании не универсальная инструкция для России.",
+      "checked_at": "2026-10-26",
+      "status": "supported",
+      "review_required_before_publish": false
+    },
+    {
+      "id": "plane-lightning",
+      "topic_ids": [
+        "plane-lightning"
+      ],
+      "claim": "В коммерческом пассажирском самолёте предусматривают проводящие пути для тока молнии и последующий осмотр.",
+      "source_ids": [
+        "nws-lightning"
+      ],
+      "scope_limit": "Не обещать отсутствие повреждений и не обобщать на все самолёты. Грозы всё равно обходят.",
+      "checked_at": "2026-10-26",
+      "status": "supported",
+      "review_required_before_publish": false
+    },
+    {
+      "id": "plane-door",
+      "topic_ids": [
+        "plane-door"
+      ],
+      "claim": "Нормальный перепад давления и конструкция запирания препятствуют ручному открытию обычной пассажирской двери на крейсерской высоте.",
+      "source_ids": [
+        "faa-doors"
+      ],
+      "scope_limit": "Кандидат ограничен нормальной герметизацией и исправной дверью. На малой высоте или после разгерметизации условия иные; нужна проверка конкретной конструкции перед сценарием.",
+      "checked_at": "2026-10-26",
+      "status": "supported",
+      "review_required_before_publish": false
+    },
+    {
+      "id": "winter-compound",
+      "topic_ids": [
+        "winter-tires"
+      ],
+      "claim": "Зимний резиновый состав сохраняет гибкость на холоде; ламели дают дополнительные кромки сцепления.",
+      "source_ids": [
+        "continental-winter"
+      ],
+      "scope_limit": "Сравнение схематическое; конкретное сцепление зависит от модели, износа, покрытия и условий.",
+      "checked_at": "2026-10-26",
+      "status": "supported",
+      "review_required_before_publish": false
+    },
+    {
+      "id": "engine-bypass",
+      "topic_ids": [
+        "turbofan"
+      ],
+      "claim": "У турбовентиляторного двигателя часть воздуха обходит горячее ядро; внешний поток участвует в создании тяги.",
+      "source_ids": [
+        "nasa-fan"
+      ],
+      "scope_limit": "Не все двигатели одинаковы; видео объясняет общий принцип, без утверждений о ПД-8.",
+      "checked_at": "2026-10-26",
+      "status": "supported",
+      "review_required_before_publish": false
+    },
+    {
+      "id": "orbit-freefall",
+      "topic_ids": [
+        "orbit-freefall"
+      ],
+      "claim": "Космонавты и станция в орбите падают вместе под действием гравитации; это создаёт ощущение невесомости.",
+      "source_ids": [
+        "nasa-orbit"
+      ],
+      "scope_limit": "Не отсутствие гравитации. Вращение, сопротивление атмосферы и работа оборудования создают остаточные ускорения.",
+      "checked_at": "2026-10-26",
+      "status": "supported",
+      "review_required_before_publish": false
+    }
+  ]
+}

@@ -95,7 +95,7 @@ def test_preview_makes_only_audio(monkeypatch, tmp_path):
         return file
     monkeypatch.setattr(cli, "make_audio", mocked_voice)
     assert main(["--voice-preview", "Это проверка русского голоса!", "--voice-provider", "yandex",
-                 "--out", str(tmp_path)]) == 0
+                 "--max-cost-usd", "0.1", "--out", str(tmp_path)]) == 0
     assert len(called) == 1
     assert len(list(tmp_path.glob("voice-preview-*/audio_00.mp3"))) == 1
     assert not list(tmp_path.glob("**/image*"))
@@ -110,3 +110,19 @@ def test_demo_stays_offline_with_new_default(monkeypatch, tmp_path):
     assert main(["--topic", "Проба", "--demo", "--seconds", "12", "--width", "360",
                  "--height", "640", "--fps", "12", "--out", str(tmp_path)]) == 0
     assert len(list(tmp_path.glob("*/v1/short.mp4"))) == 1
+
+
+def test_macos_native_method_and_measured_speed(monkeypatch, tmp_path):
+    import shorts_factory.voice as voice_module
+    from subprocess import CompletedProcess
+    monkeypatch.setattr(voice_module.platform, "system", lambda: "Darwin")
+    calls = []
+    def say(command, **kwargs):
+        calls.append(command)
+        Path(command[command.index("-o") + 1]).write_bytes(b"local-audio")
+        return CompletedProcess(command, 0, "", "")
+    monkeypatch.setattr(voice_module.subprocess, "run", say)
+    audio = make_audio("Он идёт по дну.", tmp_path, 0, provider="macos", voice="Milena", language="ru", speed=1.0)
+    assert audio.suffix == ".aiff"
+    assert calls[0][:5] == ["say", "-v", "Milena", "-r", "160"]
+    assert calls[0][-1] == "Он идёт по дну."

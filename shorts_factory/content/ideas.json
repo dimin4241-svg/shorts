@@ -1,0 +1,710 @@
+{
+  "schema_version": 1,
+  "researched_at": "2026-10-26",
+  "score_weights": {
+    "audience": 25,
+    "originality": 20,
+    "visual": 20,
+    "retention": 15,
+    "timeliness": 10,
+    "verifiability": 10
+  },
+  "score_notice": "Ручной рейтинг редакционных гипотез. Не вероятность вирусности и не прогноз просмотров.",
+  "selected_top_five": [
+    "submarine-cables",
+    "cold-phone",
+    "both-engines",
+    "space-sound",
+    "winter-tires"
+  ],
+  "ideas": [
+    {
+      "id": "submarine-cables",
+      "user_candidate": 1,
+      "original": false,
+      "topic": "Почему интернет между материками проходит по дну океана?",
+      "title": "Почему интернет между материками проходит по дну океана?",
+      "hook": "Почему интернет между материками идёт по дну океана?",
+      "hooks": [
+        "Почему интернет между материками идёт по дну океана?",
+        "У беспроводного мира есть провода на дне океана. Почему?",
+        "Спутники в небе. Почему же данные между материками идут под водой?"
+      ],
+      "score": 92,
+      "score_components": {
+        "audience": 24,
+        "originality": 18,
+        "visual": 20,
+        "retention": 14,
+        "timeliness": 6,
+        "verifiability": 10
+      },
+      "score_kind": "editorial_hypothesis_not_view_prediction",
+      "source_ids": [
+        "ec-cables",
+        "itu-2026",
+        "itu-fiber",
+        "nokia-fiber",
+        "isoc-cables"
+      ],
+      "source_urls": [
+        "https://digital-strategy.ec.europa.eu/en/news/commission-increases-submarine-cable-security-eu347-million-investment-and-new-toolbox",
+        "https://www.itu.int/en/mediacentre/Pages/PR-2026-07-10-Submarine-cable-resilience-report.aspx",
+        "https://www.itu.int/epublications/publication/itu-t-g-suppl-41-2024-07-design-guidelines-for-optical-fibre-submarine-cable-systems",
+        "https://www.nokia.com/optical-networks/subsea-network-solutions/",
+        "https://www.internetsociety.org/resources/policybriefs/2025/enhancing-the-resilience-of-submarine-internet-infrastructure/"
+      ],
+      "checked_at": "2026-10-26",
+      "relevance": "Официальные публикации 2026 года подтверждают важность устойчивости; это не новость о повреждении сегодня.",
+      "freshness": "evergreen",
+      "popularity": null,
+      "competition": null,
+      "competition_status": "not_measured_no_comparable_recent_video_sample",
+      "audience_hypothesis": "Понятный бытовой или зрелищный вопрос для широкой аудитории; требует проверки реальным удержанием.",
+      "visual_potential": "Переход от глобуса к оптоволокну и живое переключение маршрута.",
+      "production_complexity": "medium",
+      "factual_risk": "Не путать межконтинентальный и весь трафик; не обещать безусловное восстановление.",
+      "pilot_ready": true,
+      "rank": 1,
+      "selected_top_five": true
+    },
+    {
+      "id": "cold-phone",
+      "user_candidate": 4,
+      "original": false,
+      "topic": "Почему телефон выключается на морозе?",
+      "title": "Почему телефон выключается на морозе?",
+      "hook": "Телефон замёрз и выключился. Заряд правда исчез?",
+      "hooks": [
+        "Телефон замёрз и выключился. Заряд правда исчез?",
+        "Почему на морозе батарея сдаётся раньше тебя?",
+        "В тепле телефон ожил без розетки. Как это возможно?"
+      ],
+      "score": 89,
+      "score_components": {
+        "audience": 25,
+        "originality": 17,
+        "visual": 18,
+        "retention": 14,
+        "timeliness": 6,
+        "verifiability": 9
+      },
+      "score_kind": "editorial_hypothesis_not_view_prediction",
+      "source_ids": [
+        "apple-cold",
+        "nist-battery",
+        "ucsd-battery"
+      ],
+      "source_urls": [
+        "https://support.apple.com/en-us/118431",
+        "https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=911922",
+        "https://cmp.ucsd.edu/publication/s41560-021-00783-z/055.s41560-021-00783-z.pdf"
+      ],
+      "checked_at": "2026-10-26",
+      "relevance": "Конец октября делает сюжет сезонной гипотезой. Это не измеренный тренд именно про телефон.",
+      "freshness": "seasonal",
+      "popularity": null,
+      "competition": null,
+      "competition_status": "not_measured_no_comparable_recent_video_sample",
+      "audience_hypothesis": "Понятный бытовой или зрелищный вопрос для широкой аудитории; требует проверки реальным удержанием.",
+      "visual_potential": "Уличный телефон, увеличение батареи, замедленные частицы и возврат в тепло.",
+      "production_complexity": "low",
+      "factual_risk": "Не путать доступную мощность с необратимой потерей заряда; не советовать батарею отопления.",
+      "pilot_ready": true,
+      "rank": 2,
+      "selected_top_five": true
+    },
+    {
+      "id": "both-engines",
+      "user_candidate": 2,
+      "original": false,
+      "topic": "Что происходит с самолётом без тяги обоих двигателей?",
+      "title": "Что происходит с самолётом без тяги обоих двигателей?",
+      "hook": "Оба двигателя замолчали. Почему самолёт ещё летит?",
+      "hooks": [
+        "Оба двигателя замолчали. Почему самолёт ещё летит?",
+        "Самолёт без тяги — это падение или планирование?",
+        "Двигатели выключились, а крылья продолжают работать. Как?"
+      ],
+      "score": 87,
+      "score_components": {
+        "audience": 24,
+        "originality": 17,
+        "visual": 19,
+        "retention": 14,
+        "timeliness": 3,
+        "verifiability": 10
+      },
+      "score_kind": "editorial_hypothesis_not_view_prediction",
+      "source_ids": [
+        "faa-glide"
+      ],
+      "source_urls": [
+        "https://www.faa.gov/lessonslearned/transportairplane/accidents/N160US"
+      ],
+      "checked_at": "2026-10-26",
+      "relevance": "Актуальный вечнозелёный механизм; всплеск интереса к точной формулировке не подтверждён.",
+      "freshness": "evergreen",
+      "popularity": null,
+      "competition": null,
+      "competition_status": "not_measured_no_comparable_recent_video_sample",
+      "audience_hypothesis": "Понятный бытовой или зрелищный вопрос для широкой аудитории; требует проверки реальным удержанием.",
+      "visual_potential": "Один силуэт, стрелки потока и расходуемая высота.",
+      "production_complexity": "medium",
+      "factual_risk": "Не давать инструкций пилотирования и не обещать безопасную посадку.",
+      "pilot_ready": true,
+      "rank": 3,
+      "selected_top_five": true
+    },
+    {
+      "id": "space-sound",
+      "user_candidate": 9,
+      "original": false,
+      "topic": "Почему взрыв через вакуум не услышать?",
+      "title": "Почему взрыв через вакуум не услышать?",
+      "hook": "Взрыв видно. Почему через вакуум его не слышно?",
+      "hooks": [
+        "Взрыв видно. Почему через вакуум его не слышно?",
+        "Почему космонавты разговаривают по радио, а не кричат?",
+        "Кино озвучивает космос. Что пропущено в этой сцене?"
+      ],
+      "score": 86,
+      "score_components": {
+        "audience": 24,
+        "originality": 16,
+        "visual": 19,
+        "retention": 14,
+        "timeliness": 3,
+        "verifiability": 10
+      },
+      "score_kind": "editorial_hypothesis_not_view_prediction",
+      "source_ids": [
+        "nasa-sound",
+        "esa-sound"
+      ],
+      "source_urls": [
+        "https://science.nasa.gov/ems/02_anatomy/",
+        "https://www.esa.int/Science_Exploration/Space_Science/Space_sensations/LISTEN_UP"
+      ],
+      "checked_at": "2026-10-26",
+      "relevance": "Актуальный вечнозелёный механизм; всплеск интереса к точной формулировке не подтверждён.",
+      "freshness": "evergreen",
+      "popularity": null,
+      "competition": null,
+      "competition_status": "not_measured_no_comparable_recent_video_sample",
+      "audience_hypothesis": "Понятный бытовой или зрелищный вопрос для широкой аудитории; требует проверки реальным удержанием.",
+      "visual_potential": "Возмущение частиц прекращается на границе вакуума; радиосигнал доходит.",
+      "production_complexity": "low",
+      "factual_risk": "Не утверждать, что в космосе нигде нет звука; звук внутри корабля есть.",
+      "pilot_ready": true,
+      "rank": 4,
+      "selected_top_five": true
+    },
+    {
+      "id": "winter-tires",
+      "user_candidate": null,
+      "original": true,
+      "topic": "Зимняя шина — это не только шипы. Что меняется в резине?",
+      "title": "Зимняя шина — это не только шипы. Что меняется в резине?",
+      "hook": "Зимняя шина — это не только шипы. А что ещё?",
+      "hooks": [
+        "Зимняя шина — это не только шипы. А что ещё?",
+        "Почему рисунок протектора не объясняет всю зимнюю шину?",
+        "Две шины на морозе. Почему резина ведёт себя по-разному?"
+      ],
+      "score": 85,
+      "score_components": {
+        "audience": 24,
+        "originality": 16,
+        "visual": 18,
+        "retention": 13,
+        "timeliness": 7,
+        "verifiability": 7
+      },
+      "score_kind": "editorial_hypothesis_not_view_prediction",
+      "source_ids": [
+        "continental-winter"
+      ],
+      "source_urls": [
+        "https://www.continental-tires.com/ca/en/tire-knowledge/winter-tires-or-snow-tires/"
+      ],
+      "checked_at": "2026-10-26",
+      "relevance": "Прямо связанный сезонный запрос «зимняя шина» замечен в публичном срезе Trends RU.",
+      "freshness": "seasonal",
+      "popularity": {
+        "kind": "related_query",
+        "query": "зимняя шина",
+        "reported_search_volume": "50K+",
+        "reported_growth": "1,000%",
+        "window": "24h",
+        "geo": "RU",
+        "source_url": "https://trends.google.com/trending?geo=RU",
+        "checked_at": "2026-10-26",
+        "limit": "Поисковый спрос не измеряет просмотры/удержание видео и может быть покупательским."
+      },
+      "competition": null,
+      "competition_status": "not_measured_no_comparable_recent_video_sample",
+      "audience_hypothesis": "Понятный бытовой или зрелищный вопрос для широкой аудитории; требует проверки реальным удержанием.",
+      "visual_potential": "Две схематичные полоски резины, кромки ламелей и пятно контакта.",
+      "production_complexity": "low",
+      "factual_risk": "Нет обещаний тормозного пути; свойства зависят от модели и условий.",
+      "pilot_ready": true,
+      "rank": 5,
+      "selected_top_five": true
+    },
+    {
+      "id": "turbofan",
+      "user_candidate": null,
+      "original": true,
+      "topic": "Зачем реактивному двигателю большой вентилятор?",
+      "title": "Зачем реактивному двигателю большой вентилятор?",
+      "hook": "Почему у реактивного двигателя такой огромный вентилятор?",
+      "hooks": [
+        "Почему у реактивного двигателя такой огромный вентилятор?",
+        "Часть воздуха в двигателе обходит огонь. Зачем?",
+        "Самолёт двигает не только горячий выхлоп. Что ещё?"
+      ],
+      "score": 84,
+      "score_components": {
+        "audience": 22,
+        "originality": 17,
+        "visual": 19,
+        "retention": 12,
+        "timeliness": 6,
+        "verifiability": 8
+      },
+      "score_kind": "editorial_hypothesis_not_view_prediction",
+      "source_ids": [
+        "nasa-fan"
+      ],
+      "source_urls": [
+        "https://www.grc.nasa.gov/www/k-12/BGP/turbfan.html"
+      ],
+      "checked_at": "2026-10-26",
+      "relevance": "Широкий запрос «пд-8» наблюдался в Trends; интерес к общему объяснению — производная гипотеза.",
+      "freshness": "evergreen",
+      "popularity": {
+        "kind": "related_broad_query_only",
+        "query": "пд-8",
+        "reported_search_volume": "10K+",
+        "reported_growth": "1,000%",
+        "window": "24h",
+        "geo": "RU",
+        "source_url": "https://trends.google.com/trending?geo=RU",
+        "checked_at": "2026-10-26",
+        "limit": "ПД-8 — конкретный двигатель. Наш сюжет о принципе турбовентилятора; связь спроса гипотетическая."
+      },
+      "competition": null,
+      "competition_status": "not_measured_no_comparable_recent_video_sample",
+      "audience_hypothesis": "Понятный бытовой или зрелищный вопрос для широкой аудитории; требует проверки реальным удержанием.",
+      "visual_potential": "Разрез двигателя, холодный внешний поток и горячее ядро.",
+      "production_complexity": "medium",
+      "factual_risk": "Сюжет о принципе, без неподтверждённых характеристик и новостей ПД-8.",
+      "pilot_ready": false,
+      "rank": 6,
+      "selected_top_five": false
+    },
+    {
+      "id": "gps-day",
+      "user_candidate": 5,
+      "original": false,
+      "topic": "Сутки без GPS: дело не только в навигаторе",
+      "title": "Сутки без GPS: дело не только в навигаторе",
+      "hook": "Если GPS исчезнет, пострадает только карта?",
+      "hooks": [
+        "Если GPS исчезнет, пострадает только карта?",
+        "Зачем банку сигнал со спутника?",
+        "У GPS есть незаметная работа: он раздаёт время."
+      ],
+      "score": 83,
+      "score_components": {
+        "audience": 23,
+        "originality": 18,
+        "visual": 18,
+        "retention": 13,
+        "timeliness": 3,
+        "verifiability": 8
+      },
+      "score_kind": "editorial_hypothesis_not_view_prediction",
+      "source_ids": [
+        "nist-gps",
+        "nist-pnt"
+      ],
+      "source_urls": [
+        "https://www.nist.gov/publications/evaluation-dependencies-critical-infrastructure-timing-systems-global-positioning",
+        "https://www.nist.gov/pnt"
+      ],
+      "checked_at": "2026-10-26",
+      "relevance": "Актуальный вечнозелёный механизм; всплеск интереса к точной формулировке не подтверждён.",
+      "freshness": "evergreen",
+      "popularity": null,
+      "competition": null,
+      "competition_status": "not_measured_no_comparable_recent_video_sample",
+      "audience_hypothesis": "Понятный бытовой или зрелищный вопрос для широкой аудитории; требует проверки реальным удержанием.",
+      "visual_potential": "Карта превращается в часы, затем связь и серверы.",
+      "production_complexity": "high",
+      "factual_risk": "GPS не равен всем GNSS; масштаб зависит от резервов. Нет точного прогноза за сутки.",
+      "pilot_ready": false,
+      "rank": 7,
+      "selected_top_five": false
+    },
+    {
+      "id": "cable-country",
+      "user_candidate": 7,
+      "original": false,
+      "topic": "Почему обрыв кабеля опаснее для одной страны, чем для другой?",
+      "title": "Почему обрыв кабеля опаснее для одной страны, чем для другой?",
+      "hook": "Один кабель порвался. Почему где-то это почти незаметно?",
+      "hooks": [
+        "Один кабель порвался. Почему где-то это почти незаметно?",
+        "Связь зависит не только от толщины кабеля. От чего ещё?",
+        "Два острова, один обрыв — и разный результат. Почему?"
+      ],
+      "score": 83,
+      "score_components": {
+        "audience": 21,
+        "originality": 15,
+        "visual": 19,
+        "retention": 13,
+        "timeliness": 6,
+        "verifiability": 9
+      },
+      "score_kind": "editorial_hypothesis_not_view_prediction",
+      "source_ids": [
+        "itu-2026",
+        "isoc-cables"
+      ],
+      "source_urls": [
+        "https://www.itu.int/en/mediacentre/Pages/PR-2026-07-10-Submarine-cable-resilience-report.aspx",
+        "https://www.internetsociety.org/resources/policybriefs/2025/enhancing-the-resilience-of-submarine-internet-infrastructure/"
+      ],
+      "checked_at": "2026-10-26",
+      "relevance": "Актуальный вечнозелёный механизм; всплеск интереса к точной формулировке не подтверждён.",
+      "freshness": "evergreen",
+      "popularity": null,
+      "competition": null,
+      "competition_status": "not_measured_no_comparable_recent_video_sample",
+      "audience_hypothesis": "Понятный бытовой или зрелищный вопрос для широкой аудитории; требует проверки реальным удержанием.",
+      "visual_potential": "Контраст двух условных островов с разным числом независимых путей.",
+      "production_complexity": "medium",
+      "factual_risk": "Не изображать вымышленную карту как конкретную страну; резерв зависит и от ёмкости.",
+      "pilot_ready": false,
+      "rank": 8,
+      "selected_top_five": false
+    },
+    {
+      "id": "plane-lightning",
+      "user_candidate": 11,
+      "original": false,
+      "topic": "Что происходит при попадании молнии в пассажирский самолёт?",
+      "title": "Что происходит при попадании молнии в пассажирский самолёт?",
+      "hook": "Молния попала в лайнер. Куда идёт ток?",
+      "hooks": [
+        "Молния попала в лайнер. Куда идёт ток?",
+        "Почему самолёт может выдержать удар молнии?",
+        "Грозы обходят даже защищённые самолёты. Почему?"
+      ],
+      "score": 83,
+      "score_components": {
+        "audience": 24,
+        "originality": 15,
+        "visual": 19,
+        "retention": 13,
+        "timeliness": 3,
+        "verifiability": 9
+      },
+      "score_kind": "editorial_hypothesis_not_view_prediction",
+      "source_ids": [
+        "nws-lightning"
+      ],
+      "source_urls": [
+        "https://www.weather.gov/safety/lightning-planes"
+      ],
+      "checked_at": "2026-10-26",
+      "relevance": "Актуальный вечнозелёный механизм; всплеск интереса к точной формулировке не подтверждён.",
+      "freshness": "evergreen",
+      "popularity": null,
+      "competition": null,
+      "competition_status": "not_measured_no_comparable_recent_video_sample",
+      "audience_hypothesis": "Понятный бытовой или зрелищный вопрос для широкой аудитории; требует проверки реальным удержанием.",
+      "visual_potential": "Проводящий контур и спокойный салон; затем осмотр.",
+      "production_complexity": "medium",
+      "factual_risk": "Нельзя обещать отсутствие повреждений или показывать фейковое происшествие.",
+      "pilot_ready": false,
+      "rank": 9,
+      "selected_top_five": false
+    },
+    {
+      "id": "orbit-freefall",
+      "user_candidate": null,
+      "original": true,
+      "topic": "Почему космонавты невесомы, если гравитация не исчезла?",
+      "title": "Почему космонавты невесомы, если гравитация не исчезла?",
+      "hook": "На орбите есть гравитация. Почему космонавт парит?",
+      "hooks": [
+        "На орбите есть гравитация. Почему космонавт парит?",
+        "Космонавт и станция постоянно падают. Куда?",
+        "Невесомость начинается не там, где заканчивается гравитация."
+      ],
+      "score": 83,
+      "score_components": {
+        "audience": 23,
+        "originality": 16,
+        "visual": 18,
+        "retention": 13,
+        "timeliness": 3,
+        "verifiability": 10
+      },
+      "score_kind": "editorial_hypothesis_not_view_prediction",
+      "source_ids": [
+        "nasa-orbit"
+      ],
+      "source_urls": [
+        "https://www.nasa.gov/centers-and-facilities/glenn/what-is-microgravity/"
+      ],
+      "checked_at": "2026-10-26",
+      "relevance": "Дополнительная вечнозелёная гипотеза из официального образовательного материала NASA; текущий всплеск не найден.",
+      "freshness": "evergreen",
+      "popularity": null,
+      "competition": null,
+      "competition_status": "not_measured_no_comparable_recent_video_sample",
+      "audience_hypothesis": "Понятный бытовой или зрелищный вопрос для широкой аудитории; требует проверки реальным удержанием.",
+      "visual_potential": "Человек, яблоко и станция движутся вместе по одной дуге.",
+      "production_complexity": "medium",
+      "factual_risk": "Не изображать невесомость как отсутствие притяжения.",
+      "pilot_ready": false,
+      "rank": 10,
+      "selected_top_five": false
+    },
+    {
+      "id": "earth-rotation",
+      "user_candidate": 6,
+      "original": false,
+      "topic": "Почему мы не ощущаем вращение Земли?",
+      "title": "Почему мы не ощущаем вращение Земли?",
+      "hook": "Земля вращается. Почему нас не укачивает?",
+      "hooks": [
+        "Земля вращается. Почему нас не укачивает?",
+        "Почему вращение Земли незаметно в комнате?",
+        "Карусель кружит голову. Почему Земля — нет?"
+      ],
+      "score": 82,
+      "score_components": {
+        "audience": 23,
+        "originality": 16,
+        "visual": 18,
+        "retention": 13,
+        "timeliness": 3,
+        "verifiability": 9
+      },
+      "score_kind": "editorial_hypothesis_not_view_prediction",
+      "source_ids": [
+        "nasa-rotation"
+      ],
+      "source_urls": [
+        "https://cosmicopia.gsfc.nasa.gov/qa_gp_ev.html"
+      ],
+      "checked_at": "2026-10-26",
+      "relevance": "Актуальный вечнозелёный механизм; всплеск интереса к точной формулировке не подтверждён.",
+      "freshness": "evergreen",
+      "popularity": null,
+      "competition": null,
+      "competition_status": "not_measured_no_comparable_recent_video_sample",
+      "audience_hypothesis": "Понятный бытовой или зрелищный вопрос для широкой аудитории; требует проверки реальным удержанием.",
+      "visual_potential": "Комната на глобусе и очень широкая дуга движения.",
+      "production_complexity": "medium",
+      "factual_risk": "Круговое движение имеет ускорение; не сводить ответ к «скорость постоянна».",
+      "pilot_ready": false,
+      "rank": 11,
+      "selected_top_five": false
+    },
+    {
+      "id": "bank-transfer",
+      "user_candidate": 10,
+      "original": false,
+      "topic": "Как проходит перевод без перемещения купюр?",
+      "title": "Как проходит перевод без перемещения купюр?",
+      "hook": "Ты отправил деньги. Что на самом деле переместилось?",
+      "hooks": [
+        "Ты отправил деньги. Что на самом деле переместилось?",
+        "Почему перевод работает без грузовика с наличными?",
+        "Цифра в приложении изменилась. А что сделали банки?"
+      ],
+      "score": 81,
+      "score_components": {
+        "audience": 22,
+        "originality": 16,
+        "visual": 17,
+        "retention": 12,
+        "timeliness": 6,
+        "verifiability": 8
+      },
+      "score_kind": "editorial_hypothesis_not_view_prediction",
+      "source_ids": [
+        "boe-payments"
+      ],
+      "source_urls": [
+        "https://www.bankofengland.co.uk/Payment%20and%20settlement"
+      ],
+      "checked_at": "2026-10-26",
+      "relevance": "Замечен широкий запрос «банк», который не доказывает интереса к механике переводов.",
+      "freshness": "evergreen",
+      "popularity": {
+        "kind": "broad_query_only",
+        "query": "банк",
+        "reported_search_volume": "20K+",
+        "reported_growth": "800%",
+        "window": "24h",
+        "geo": "RU",
+        "source_url": "https://trends.google.com/trending?geo=RU",
+        "checked_at": "2026-10-26",
+        "limit": "Многозначный широкий запрос; интерес к механике перевода не доказан."
+      },
+      "competition": null,
+      "competition_status": "not_measured_no_comparable_recent_video_sample",
+      "audience_hypothesis": "Понятный бытовой или зрелищный вопрос для широкой аудитории; требует проверки реальным удержанием.",
+      "visual_potential": "Два журнала учёта и третий слой межбанковского расчёта.",
+      "production_complexity": "medium",
+      "factual_risk": "Не финансовый совет; правила систем различаются. Не сводить перевод к копированию цифры.",
+      "pilot_ready": false,
+      "rank": 12,
+      "selected_top_five": false
+    },
+    {
+      "id": "oil-stop",
+      "user_candidate": 8,
+      "original": false,
+      "topic": "Поставки нефти остановились: какие зависимости скрыты вокруг нас?",
+      "title": "Поставки нефти остановились: какие зависимости скрыты вокруг нас?",
+      "hook": "Нефть нужна только машинам? Посмотри вокруг.",
+      "hooks": [
+        "Нефть нужна только машинам? Посмотри вокруг.",
+        "Что связывает самолёт, упаковку и асфальт?",
+        "Если нефть перестанет поступать, почему эффект не наступит везде сразу?"
+      ],
+      "score": 79,
+      "score_components": {
+        "audience": 22,
+        "originality": 15,
+        "visual": 17,
+        "retention": 12,
+        "timeliness": 6,
+        "verifiability": 7
+      },
+      "score_kind": "editorial_hypothesis_not_view_prediction",
+      "source_ids": [
+        "eia-oil"
+      ],
+      "source_urls": [
+        "https://www.eia.gov/energyexplained/oil-and-petroleum-products/use-of-oil.php"
+      ],
+      "checked_at": "2026-10-26",
+      "relevance": "В Trends RU замечен широкий запрос «нефть»; причина всплеска неизвестна.",
+      "freshness": "evergreen",
+      "popularity": {
+        "kind": "broad_query_only",
+        "query": "нефть",
+        "reported_search_volume": "20K+",
+        "reported_growth": "1,000%",
+        "window": "24h",
+        "geo": "RU",
+        "source_url": "https://trends.google.com/trending?geo=RU",
+        "checked_at": "2026-10-26",
+        "limit": "Не точная тема ролика и не спрос на Shorts; причин всплеска не установлено."
+      },
+      "competition": null,
+      "competition_status": "not_measured_no_comparable_recent_video_sample",
+      "audience_hypothesis": "Понятный бытовой или зрелищный вопрос для широкой аудитории; требует проверки реальным удержанием.",
+      "visual_potential": "Цепь поставок: нефтепереработка, транспорт, химическое сырьё.",
+      "production_complexity": "high",
+      "factual_risk": "Не придумывать сроки исчерпания запасов и апокалиптическую последовательность.",
+      "pilot_ready": false,
+      "rank": 13,
+      "selected_top_five": false
+    },
+    {
+      "id": "minute-power",
+      "user_candidate": 3,
+      "original": false,
+      "topic": "Минута без электросети: почему часть техники продолжит работать?",
+      "title": "Минута без электросети: почему часть техники продолжит работать?",
+      "hook": "Свет погас. Почему телефон продолжает работать?",
+      "hooks": [
+        "Свет погас. Почему телефон продолжает работать?",
+        "Минута без электросети не выключит всё одновременно. Почему?",
+        "Что первым заметит минутное отключение света?"
+      ],
+      "score": 78,
+      "score_components": {
+        "audience": 22,
+        "originality": 15,
+        "visual": 18,
+        "retention": 12,
+        "timeliness": 3,
+        "verifiability": 8
+      },
+      "score_kind": "editorial_hypothesis_not_view_prediction",
+      "source_ids": [
+        "doe-backup"
+      ],
+      "source_urls": [
+        "https://www.energy.gov/cmei/systems/solar-and-resilience-basics"
+      ],
+      "checked_at": "2026-10-26",
+      "relevance": "Актуальный вечнозелёный механизм; всплеск интереса к точной формулировке не подтверждён.",
+      "freshness": "evergreen",
+      "popularity": null,
+      "competition": null,
+      "competition_status": "not_measured_no_comparable_recent_video_sample",
+      "audience_hypothesis": "Понятный бытовой или зрелищный вопрос для широкой аудитории; требует проверки реальным удержанием.",
+      "visual_potential": "Один дом, разделение сетевых и резервных цепей.",
+      "production_complexity": "medium",
+      "factual_risk": "Определить сценарий: исчезла внешняя сеть, а не электричество как физика.",
+      "pilot_ready": false,
+      "rank": 14,
+      "selected_top_five": false
+    },
+    {
+      "id": "plane-door",
+      "user_candidate": 12,
+      "original": false,
+      "topic": "Почему исправную дверь лайнера не открыть при нормальной герметизации на высоте?",
+      "title": "Почему исправную дверь лайнера не открыть при нормальной герметизации на высоте?",
+      "hook": "Что удерживает дверь самолёта на большой высоте?",
+      "hooks": [
+        "Что удерживает дверь самолёта на большой высоте?",
+        "Дверь лайнера держит не только замок. Что ещё?",
+        "Почему условия на высоте важнее силы рук?"
+      ],
+      "score": 77,
+      "score_components": {
+        "audience": 23,
+        "originality": 14,
+        "visual": 17,
+        "retention": 12,
+        "timeliness": 3,
+        "verifiability": 8
+      },
+      "score_kind": "editorial_hypothesis_not_view_prediction",
+      "source_ids": [
+        "faa-doors"
+      ],
+      "source_urls": [
+        "https://www.faa.gov/documentLibrary/media/Advisory_Circular/AC_25_783-1A.pdf"
+      ],
+      "checked_at": "2026-10-26",
+      "relevance": "Актуальный вечнозелёный механизм; всплеск интереса к точной формулировке не подтверждён.",
+      "freshness": "evergreen",
+      "popularity": null,
+      "competition": null,
+      "competition_status": "not_measured_no_comparable_recent_video_sample",
+      "audience_hypothesis": "Понятный бытовой или зрелищный вопрос для широкой аудитории; требует проверки реальным удержанием.",
+      "visual_potential": "Разрез герметичной кабины, давление и замки.",
+      "production_complexity": "high",
+      "factual_risk": "Точная конструкция двери важна; не говорить «невозможно всегда и везде».",
+      "pilot_ready": false,
+      "rank": 15,
+      "selected_top_five": false
+    }
+  ]
+}

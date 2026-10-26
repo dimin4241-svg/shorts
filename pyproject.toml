@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "shorts-factory"
-version = "0.1.0"
+version = "0.2.0"
 description = "API-driven vertical Shorts/Reels generator with OpenAI imagery and Claude SVG art"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -19,6 +19,9 @@ shorts-factory = "shorts_factory.cli:main"
 
 [tool.setuptools.packages.find]
 include = ["shorts_factory*"]
+
+[tool.setuptools.package-data]
+shorts_factory = ["content/*.json"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

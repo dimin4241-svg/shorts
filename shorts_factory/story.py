@@ -80,7 +80,7 @@ def demo_story(topic: str) -> Story:
         title=f"{topic}: коротко и наглядно",
         description="Демонстрация локального видеоконвейера без платных API. Текст в этом примере не является фактическим объяснением.",
         scenes=[
-            Scene(f"Сегодня попробуем разобраться: {topic}.", "ВОТ КАКОЙ ВОПРОС", "Bold question mark in front of abstract geometric shapes"),
+            Scene(f"Как это устроено: {topic}?", "ВОТ КАКОЙ ВОПРОС", "Bold question mark in front of abstract geometric shapes"),
             Scene("Для начала зададим правильный вопрос и выделим самое важное.", "НАЧНЁМ С ГЛАВНОГО", "Magnifying glass over a colorful schematic"),
             Scene("Затем посмотрим на простой пример и сравним возможные варианты.", "РАЗБЕРЁМ НА ПРИМЕРЕ", "Two illustrated cards with simple shapes"),
             Scene("Это демонстрационный ролик. Подключите API для настоящего сценария и картинок.", "ВКЛЮЧИ ГЕНЕРАЦИЮ", "Sparkling studio lights around a video frame"),
