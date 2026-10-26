@@ -116,9 +116,13 @@ def render_segments(frames: list[Path], audios: list[Path | None], out_dir: Path
             cmd += ["-i", str(audio)]
         else:
             cmd += ["-f", "lavfi", "-i", "anullsrc=channel_layout=stereo:sample_rate=44100"]
+        # Avoid shouting, volume jumps and digital clipping between voice clips.
+        # Keep the music track disabled by default: narration must stay intelligible.
+        if audio:
+            cmd += ["-af", f"highpass=f=65,loudnorm=I=-16:TP=-1.5:LRA=9,afade=t=out:st={max(0, duration - .12):.3f}:d=0.12"]
         cmd += ["-t", f"{duration:.3f}", "-vf", f"fade=t=in:st=0:d=0.14,fade=t=out:st={max(0, duration - .2):.3f}:d=0.2",
                 "-c:v", "libx264", "-preset", "veryfast", "-crf", "22", "-pix_fmt", "yuv420p",
-                "-r", str(fps), "-c:a", "aac", "-ar", "44100", "-ac", "2", "-movflags", "+faststart", str(segment)]
+                "-r", str(fps), "-c:a", "aac", "-ar", "48000", "-ac", "2", "-b:a", "160k", "-movflags", "+faststart", str(segment)]
         _run(cmd)
         segments.append(segment)
     playlist = out_dir / "concat.txt"
