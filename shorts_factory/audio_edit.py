@@ -5,25 +5,23 @@ import hashlib
 import json
 import math
 from pathlib import Path
+import re
 import subprocess
 
 from .render import media_duration, require_ffmpeg
 
-_FILTER = (
-    "aresample=48000,aformat=sample_fmts=s16:channel_layouts=stereo,"
-    "silenceremove=start_periods=1:start_duration=0.10:start_threshold=-45dB:"
-    "start_silence=0.08:detection=rms:window=0.02,areverse,"
-    "silenceremove=stop_periods=-1:stop_duration=0.20:stop_threshold=-40dB:"
-    "stop_silence=0.08:detection=rms:window=0.02"
-)
-_VERSION = 1
+_VERSION = 4
+_TAIL_THRESHOLD_DB = -50
+_MIN_TAIL_SECONDS = 0.65
+_RETAIN_TAIL_SECONDS = 0.25
 
 
 def prepare_narration(source: Path, folder: Path, index: int) -> tuple[Path, dict]:
-    """Keep short breaths, trim long gaps and edge padding, and preserve the text.
+    """Trim only a measured long silence at EOF; keep speech and all pauses verbatim.
 
-    Long pauses (>200 ms at -40 dB RMS) are shortened to about 300 ms. This changes
-    silence only; it does not time-stretch, reorder, or synthesize speech.
+    A conservative silence probe must find at least 650 ms of terminal quiet at
+    -50 dB RMS. In that case only the final silence is shortened to 250 ms. Starts,
+    internal pauses and all preceding audio samples are preserved exactly.
     The lossless render-ready WAV is cached against the exact source bytes.
     """
     require_ffmpeg()
@@ -41,8 +39,23 @@ def prepare_narration(source: Path, folder: Path, index: int) -> tuple[Path, dic
                     return output, cached
         except (OSError, ValueError, json.JSONDecodeError):
             pass
+    source_duration = media_duration(source)
+    probe = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", str(source),
+        "-af", f"silencedetect=n={_TAIL_THRESHOLD_DB}dB:d=0.40", "-f", "null", "-"],
+        capture_output=True, text=True, timeout=120)
+    if probe.returncode:
+        raise RuntimeError("Trailing silence detection failed: " + probe.stderr[-1000:])
+    starts = [float(value) for value in re.findall(r"silence_start:\s*(-?[0-9.]+)", probe.stderr)]
+    ends = [float(value) for value in re.findall(r"silence_end:\s*(-?[0-9.]+)", probe.stderr)]
+    tail_start = starts[-1] if starts else None
+    tail_end = ends[-1] if starts and len(ends) >= len(starts) else source_duration
+    detected_tail = max(0.0, source_duration - tail_start) if tail_start is not None and tail_end >= source_duration - .05 else 0.0
+    trim_to = source_duration
+    if detected_tail >= _MIN_TAIL_SECONDS:
+        trim_to = min(source_duration, tail_start + _RETAIN_TAIL_SECONDS)
+    filter_chain = f"atrim=end={trim_to:.6f},asetpts=PTS-STARTPTS,aresample=48000,aformat=sample_fmts=s16:channel_layouts=stereo"
     command = ["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", str(source),
-               "-vn", "-af", _FILTER, "-c:a", "pcm_s16le", "-ar", "48000", "-ac", "2", str(output)]
+               "-vn", "-af", filter_chain, "-c:a", "pcm_s16le", "-ar", "48000", "-ac", "2", str(output)]
     try:
         result = subprocess.run(command, capture_output=True, text=True, timeout=120)
     except subprocess.TimeoutExpired as error:
@@ -51,7 +64,6 @@ def prepare_narration(source: Path, folder: Path, index: int) -> tuple[Path, dic
     if result.returncode or not output.is_file() or output.stat().st_size == 0:
         output.unlink(missing_ok=True)
         raise RuntimeError("Speech silence trimming failed: " + result.stderr[-1000:])
-    source_duration = media_duration(source)
     prepared_duration = media_duration(output)
     if not math.isfinite(prepared_duration) or prepared_duration <= 0 or prepared_duration > source_duration + 0.05:
         output.unlink(missing_ok=True)
@@ -62,8 +74,10 @@ def prepare_narration(source: Path, folder: Path, index: int) -> tuple[Path, dic
         "source_duration_seconds": source_duration,
         "prepared_duration_seconds": prepared_duration,
         "removed_seconds": round(max(0.0, source_duration - prepared_duration), 6),
+        "detected_trailing_silence_seconds": round(detected_tail, 6),
+        "retained_trailing_silence_seconds": round(max(0.0, prepared_duration - tail_start), 6) if trim_to < source_duration and tail_start is not None else None,
         "filter_version": _VERSION,
-        "silence_policy": "preserve 80ms leading; shorten detected gaps longer than 200ms to about 300ms",
+        "silence_policy": "preserve clip start, all internal pauses and all audio before detected trailing silence; if terminal silence >=650ms at -50dB RMS, retain 250ms",
         "time_stretch": False,
         "speech_content_changed": False,
     }
